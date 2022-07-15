@@ -1,0 +1,95 @@
+.header {
+    background-color: #fff;
+    // .header__body
+
+    &__body {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 16px 0;
+    }
+
+    // .header__logo
+
+    &__logo {
+        margin-right: 40px;
+        display: block;
+        img {
+            height: 48px;
+        }
+    }
+
+    // .header__menu
+
+    &__menu {
+        flex: 1 1 auto;
+
+        // .header__menu-body
+
+        &-body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #fff !important;
+
+            & > :not(:last-child) {
+                margin-right: 45px;
+            }
+        }
+
+        // .header__menu-item
+
+        &-item {
+        }
+
+        // .header__menu-link
+
+        &-link {
+            font-style: normal;
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 1.4em;
+            color: #333333;
+            white-space: nowrap;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+
+            svg {
+                margin-left: 7.5px;
+            }
+        }
+    }
+    // .header__socials
+
+    &__socials {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        & > :not(:last-child) {
+            margin-right: 20px;
+        }
+
+        a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+    }
+
+    // .header__order
+
+    &__order {
+        margin-left: 26px;
+        @include adaptive-value("width", 222, 150, 1);
+        
+    }
+
+    // .header__burger
+
+    &__burger {
+        display: block;
+    }
+}
