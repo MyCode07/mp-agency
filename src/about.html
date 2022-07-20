@@ -1,0 +1,30 @@
+@@include('html/head.html',{'title':'О нас'})
+@@include('html/header.html')
+<main class="page">
+    @@include('html/banner.html',{
+    'title':'О нас',
+    'pagetitle':'О компании',
+    'pagebannerid':'banner-about',
+    'pagedescription':'Благодаря честному отношению к клиентам и привлечению лучших <br> специалистов мы стали одним из  лидеров рынка.'
+    })
+    <section class="servises__about">
+        <div class="container">
+            <div class="servises__about-body">
+                <h2 class="servises__about-title _section-title">О компании</h2>
+                <p class="servises__about-descr">MP Agency – это команда энтузиастов, которые смогли вырасти в
+                    ТОПовую, амбициозную компанию. Мы умеем оценивать
+                    потенциал бизнеса и предпринимать взвешенные решения для его роста. <br><br>
+                    В нашей компании мы гордимся тем, что MP Agency – это, прежде всего, отлаженная и
+                    структуированная система, где каждый
+                    элемент развивается и никогда не стоит на месте.</p>
+                <img src="img/consulting-page/brands.png" alt="">
+            </div>
+        </div>
+    </section>
+    @@include('html/advantages.html')
+    @@include('html/form.html')
+    @@include('html/contacts_map.html')
+    @@include('html/feedback.html')
+    @@include('html/videoblog.html')
+</main>
+@@include('html/footer.html')

@@ -1,0 +1,96 @@
+@@include('html/head.html',{'title':'Услуги'})
+@@include('html/header.html')
+<main class="page">
+    @@include('html/banner.html',{
+    'title':'Услуги',
+    'pagetitle':'Услуги по провижению',
+    'pagebannerid':'banner-services',
+    'pagedescription':'Благодаря честному отношению к клиентам и привлечению лучших <br> специалистов мы даём ТОПовый  результат в кратчайшие сроки.'
+    })
+    @@include('html/advantages.html')
+    @@include('html/customers.html')
+    <section class="servises__about">
+        <div class="container">
+            <div class="servises__about-body">
+                <h2 class="servises__about-title _section-title">Об услугах</h2>
+                <p class="servises__about-descr">Мы проводим, как сегментный, так и полный спектр услуг по
+                    продвижению на маркетплейсах Wildberries и OZON. Создаем
+                    кликбейтную инфографику и проводим SEO-оптимизацию ваших карточек. <br><br>
+                    Кроме того, мы анализируем вашу товарную матрицу и проводим консультацию по оптимальным
+                    действиям для лучшего
+                    продвижения ваших товарных карточек на Wildberries и OZON.</p>
+                <img src="img/consulting-page/brands.png" alt="">
+            </div>
+        </div>
+    </section>
+    <section class="servises__pricing">
+        <div class="container">
+            <div class="servises__pricing-body">
+                <h2 class="servises__pricing-title _section-title">Стоимость наших услуг</h2>
+                @@include('html/products_grid.html')
+            </div>
+        </div>
+    </section>
+    <section class="servises__results">
+        <div class="container">
+            <div class="servises__results-body">
+                <div class="servises__results-top">
+                    <h2 class="servises__results-title _section-title">Результаты наших клиентов</h2>
+                    <a href="" class="_section-more">Посмотреть все кейсы</a>
+                </div>
+                <div class="servises__results-content">
+                    <div class="servises__results-content-top">
+                        <div class="servises__results-top-content">
+                            <h3>Продажи товаров для рукоделия</h3>
+                            <span>Павел Вертинский</span>
+                            <p>Задача: SEO-оптимизация карточек товаров. Хорошо <br> оптимизированная карточка
+                                повысит конверсию <br> в продажу и увеличит
+                                средний чек покупки.</p>
+                        </div>
+                        <div class="servises__results-top-results results">
+                            <div class="results__past">
+                                <span class="results__past-top">БЫЛО</span>
+                                <div class="results__past-bottom">
+                                    <p>
+                                        <label>51</label>
+                                        <span>продажа</span>
+                                    </p>
+                                    <p>
+                                        <label>1126</label>
+                                        <span>визитов</span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="results__present">
+                                <span class="results__present-top">СТАЛО</span>
+                                <div class="results__present-bottom">
+                                    <p>
+                                        <label>78</label>
+                                        <span>продаж</span>
+                                    </p>
+                                    <p>
+                                        <label>4525</label>
+                                        <span>визитов</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="servises__results-bottom results__grafic">
+                        <div class="results__grafic-past">
+                            <!-- <span>Количество визитов из поисковых систем</span> -->
+                            <img src="img/services-page/01.png" alt="">
+                        </div>
+                        <div class="results__grafic-present">
+                            <!-- <span>Количество заявок</span> -->
+                            <img src="img/services-page/01.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    @@include('html/feedback.html')
+    @@include('html/faq.html')
+</main>
+@@include('html/footer.html')

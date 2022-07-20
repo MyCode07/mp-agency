@@ -1,0 +1,97 @@
+
+.product {
+    background-color: #ffffff;
+    overflow: hidden;
+    box-shadow: 0px 4px 40px rgba(247, 56, 254, 0.2);
+    border-radius: 20px;
+    max-width: 413px;
+    
+    // .product__body
+
+    &__body {
+        padding: 28px 45px 0 45px;
+    }
+
+    // .product__title
+
+    &__title {
+        font-style: normal;
+        font-weight: 900;
+        font-size: 28px;
+        line-height: 1.29em;
+        text-align: center;
+        background: linear-gradient(110.99deg, #0165c4 12.66%, #f738fe 81.62%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-fill-color: transparent;
+        margin-bottom: 29px;
+    }
+
+    ol {
+        margin-bottom: 33px;
+
+        & > :not(:last-child) {
+            margin-bottom: 16px;
+        }
+
+        li {
+            font-style: normal;
+            font-weight: 400;
+            font-size: 19px;
+            line-height: 1.26em;
+            color: #333333;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+
+            &:before {
+                content: "";
+                width: 12px;
+                flex: 0 0 12px;
+                height: 12px;
+                background: linear-gradient(217.3deg, #0165c4 5.7%, #f738fe 93.46%);
+                margin-right: 14px;
+                border-radius: 50%;
+            }
+        }
+    }
+
+    label {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 1.33em;
+        text-align: center;
+        color: #828282;
+        margin-bottom: 3px;
+        display: block;
+    }
+
+    // .product__price
+
+    &__price {
+        font-style: normal;
+        font-weight: 900;
+        font-size: 28px;
+        line-height: 0.93em;
+        text-align: center;
+        margin-bottom: 29px;
+        color: #0165c4;
+        display: block;
+    }
+
+    // .product__btn
+
+    &__btn {
+        width: 100%;
+        padding: 18px 0;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 21px;
+        line-height: 1.71em;
+        color: #ffffff;
+        text-align: center;
+        background: linear-gradient(110.99deg, #0165c4 12.66%, #f738fe 81.62%);
+    }
+}

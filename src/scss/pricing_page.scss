@@ -1,0 +1,97 @@
+.service-single__pricing {
+    padding-bottom: 88px;
+    // .service-single__pricing-body
+
+    &-body {
+    }
+
+    // .service-single__pricing-title
+
+    &-title {
+        margin-bottom: 32px;
+    }
+
+    // .service-single__pricing-grid
+
+    &-grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: 0 -30px;
+    }
+}
+
+.service-single__product {
+    background-color: #ffffff;
+    box-shadow: 0px 4px 40px rgba(1, 101, 196, 0.2);
+    border-radius: 20px;
+    max-width: 413px;
+    margin: 0 15px 34px 15px;
+
+    // .service-single__product-body
+
+    &-body {
+        padding: 92px 36px 24px 36px;
+        position: relative;
+    }
+
+    // .service-single__product-number
+
+    &-number {
+        position: absolute;
+        top: 0;
+        left: 24px;
+        font-style: normal;
+        font-weight: 900;
+        font-size: 128px;
+        line-height: 1.27em;
+        color: #f738fe;
+        opacity: 0.1;
+    }
+
+    // .service-single__product-title
+
+    &-title {
+        font-style: normal;
+        font-weight: 900;
+        font-size: 28px;
+        line-height: 1.29em;
+        color: #0165c4;
+        margin-bottom: 17px;
+    }
+
+    // .service-single__product-descr
+
+    &-descr {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 1.44em;
+        color: #333333;
+        margin-bottom: 18px;
+    }
+
+    label {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 1.44em;
+        text-align: center;
+        color: #4f4f4f;
+        margin-bottom: 1px;
+    }
+
+    // .service-single__product-price
+
+    &-price {
+        font-style: normal;
+        font-weight: 900;
+        font-size: 23px;
+        line-height: 1.39em;
+        background: linear-gradient(110.99deg, #0165c4 12.66%, #f738fe 81.62%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-fill-color: transparent;
+    }
+}

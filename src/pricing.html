@@ -1,0 +1,89 @@
+@@include('html/head.html',{'title':'Стоимость услуг'})
+@@include('html/header.html')
+    <main class="page">
+        @@include('html/banner.html',{
+        'title':'Стоимость услуг',
+        'pagetitle':'Стоимость услуг',
+        'pagebannerid':'banner-pricing',
+        'pagedescription':'Благодаря честному отношению к клиентам и привлечению лучших <br> специалистов мы стали одним из лидеров рынка.'
+        })
+        <section class="servises__pricing">
+            <div class="container">
+                <div class="servises__pricing-body">
+                    <h2 class="servises__pricing-title _section-title">Стоимость наших услуг</h2>
+                    @@include('html/products_grid.html')
+                </div>
+            </div>
+        </section>
+        <section class="service-single__pricing">
+            <div class="container">
+                <div class="service-single__pricing-body1">
+                    <h2 class="service-single__pricing-title _section-title">Стоимость отдельных услуг</h2>
+                    <div class="service-single__pricing-grid">
+                        <article class="service-single__product">
+                            <div class="service-single__product-body">
+                                <span class="service-single__product-number">01</span>
+                                <h4 class="service-single__product-title">Таргетированная реклама</h4>
+                                <p class="service-single__product-descr">Настройка таргетированной рекламы VK, OK,
+                                    Mytarget на вашу карточку товара.</p>
+                                <label for="">Стоимость:</label>
+                                <span class="service-single__product-price">25 000 руб./мес</span>
+                            </div>
+                        </article>
+                        <article class="service-single__product">
+                            <div class="service-single__product-body">
+                                <span class="service-single__product-number">02</span>
+                                <h4 class="service-single__product-title">Настройка Яндекс Директ</h4>
+                                <p class="service-single__product-descr">Настройка Яндекс Директ на вашу карточку товара
+                                    в маркетплейсах Wildberries и Ozon.</p>
+                                <label for="">Стоимость:</label>
+                                <span class="service-single__product-price">25 000 руб./мес</span>
+                            </div>
+                        </article>
+                        <article class="service-single__product">
+                            <div class="service-single__product-body">
+                                <span class="service-single__product-number">03</span>
+                                <h4 class="service-single__product-title">Создание карточек в кабинете Ozon</h4>
+                                <p class="service-single__product-descr">Создание и оформление карточки по всем
+                                    стандартам и правилам маркетплейса OZON.</p>
+                                <label for="">Стоимость:</label>
+                                <span class="service-single__product-price">500 руб./1 карточка</span>
+                            </div>
+                        </article>
+                        <article class="service-single__product">
+                            <div class="service-single__product-body">
+                                <span class="service-single__product-number">04</span>
+                                <h4 class="service-single__product-title">Создание карточек в кабинете WB</h4>
+                                <p class="service-single__product-descr">Создание и оформление карточки по всем
+                                    стандартам и правилам маркетплейса Wb.</p>
+                                <label for="">Стоимость:</label>
+                                <span class="service-single__product-price">500 руб./1 карточка</span>
+                            </div>
+                        </article>
+                        <article class="service-single__product">
+                            <div class="service-single__product-body">
+                                <span class="service-single__product-number">05</span>
+                                <h4 class="service-single__product-title">Консультация по маркетплейсам</h4>
+                                <p class="service-single__product-descr">Cамая подробная консультация по маркетплейсам
+                                    Wildberries и OZON от А до Я.</p>
+                                <label for="">Стоимость:</label>
+                                <span class="service-single__product-price">5 000 руб./1 час</span>
+                            </div>
+                        </article>
+                        <article class="service-single__product">
+                            <div class="service-single__product-body">
+                                <span class="service-single__product-number">06</span>
+                                <h4 class="service-single__product-title">Вывод карточки в ТОП WildBerries под ключ</h4>
+                                <p class="service-single__product-descr">Комлексное продвижение вашей карточки товара на
+                                    маркетплейсе Wildberries.</p>
+                                <label for="">Стоимость:</label>
+                                <span class="service-single__product-price">Индивидуально</span>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+        @@include('html/feedback.html')
+    </main>
+@@include('html/footer.html')

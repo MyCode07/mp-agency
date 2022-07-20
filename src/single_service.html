@@ -1,0 +1,118 @@
+@@include('html/head.html',{'title':'Инфографика'})
+@@include('html/header.html')
+<main class="page">
+    @@include('html/banner.html',{
+    'title':'Инфографика для маркетплейсов',
+    'pagetitle':'Инфографика для маркетплейсов',
+    'pagebannerid':'banner-singe-services',
+    'pagedescription':'Создаем продающий дизайн для тех, кто действительно хочет <br> повысить свои продажи на  маркетплейсах.'
+    })
+    <section class="works">
+        <div class="container">
+            <div class="works__body">
+                <div class="works__top">
+                    <h2 class="works__title _section-title">Наши работы</h2>
+                    <a href="" class="_section-more">Посмотреть все работы</a>
+                </div>
+                <div class="works__slider">
+                    <div class="works__slider-wrapper">
+                        <div class="works__slider-slide"></div>
+                        <div class="works__slider-slide"></div>
+                        <div class="works__slider-slide"></div>
+                        <div class="works__slider-slide"></div>
+                    </div>
+                </div>
+                <div class="works__slider-controlls">
+                    <button class="works__slider-prev _slider-button _slider-button-prev">
+                        <img src="img/svg/slider_arrow.svg" alt="">
+                    </button>
+                    <div class="works__slider-pagination _slider-pagination">
+                        <span class="swiper-pagination-bullet-active"></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <button class="works__slider-next _slider-button ">
+                        <img src="img/svg/slider_arrow.svg" alt="">
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+    @@include('html/advantages.html')
+    <section class="your__product">
+        <div class="container">
+            <div class="your__product-body">
+                <div class="your__product-content">
+                    <h2 class="your__product-title _section-title _section-title-white">Мы выделим ваш товар</h2>
+                    <p class="your__product-descr">С помощью кликбейт обложек, которые:</p>
+                    <ol>
+                        <li> Привлекают внимание</li>
+                        <li> Увеличивают конверсию</li>
+                        <li> Заставляют нажать</li>
+                        <li> Повышают шансы выйти в топ</li>
+                    </ol>
+                </div>
+                <div class="your__product-slider">
+                    <img src="img/infografic-page/infografic_arrow.svg" alt="">
+                    <div class="your__product-slider-wrapper">
+                        <div class="your__product-slider-controllblock">
+                            <div class="your__product-slider-slide">
+                                <span>Было</span>
+                                <div></div>
+                            </div>
+                            <div class="your__product-slider-pagination">
+                                <span class="active"></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </div>
+                        <div class="your__product-slider-slide">
+                            <span>Стало</span>
+                            <div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="singe__service">
+        <div class="container">
+            <div class="singe__service-body">
+                <h2 class="singe__service-title _section-title">Стоимость услуги</h2>
+                <div class="singe__service-grid">
+                    <div class="singe__service-grid-left">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                    <article class="singe__service-product product">
+                        <div class="product__body">
+                            <h4 class="product__title">Создание<br> инфографики</h4>
+                            <ol>
+                                <li>Анализ конкурентов</li>
+                                <li>Формирование конкурентных преимуществ</li>
+                                <li>Разработка техзадания для дизайнера</li>
+                                <li>Формирование тематического дизайна</li>
+                                <li>Размещение инфографики на слайдах</li>
+                            </ol>
+                            <label for="">стоимость</label>
+                            <span class="product__price"> 800 руб./картинка</span>
+                        </div>
+                        <button class="product__btn">Заказать консультацию</button>
+                    </article>
+                    <div class="singe__service-grid-right">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    @@include('html/form.html')
+    @@include('html/feedback.html')
+</main>
+@@include('html/footer.html')
