@@ -4,8 +4,9 @@
 .container {
     max-width: 1300px;
     margin: 0 auto;
-    @media (max-width: 1440px) {
-        padding: 0 70px;
+    @media (max-width: 1360px) {
+        padding: 0 30px;
+        max-width: none;
     }
 
     @media (max-width: 1024px) {
@@ -36,10 +37,8 @@ $sfd: "SF Pro Display", sans-serif;
 ._btn-black {
     background-color: #000000;
     border-radius: 100px;
-    padding: 26px 0;
     font-style: normal;
     font-weight: 600;
-    font-size: 21px;
     line-height: 1.7em;
     color: #ffffff;
     text-align: center;
@@ -70,10 +69,9 @@ $sfd: "SF Pro Display", sans-serif;
 ._section-title {
     font-style: normal;
     font-weight: 700;
-    font-size: 40px;
+    @include adaptive-value("font-size", 40, 26, 1);
     line-height: 1.2em;
     color: #000000;
-
     &-white {
         color: #fff;
     }
@@ -82,15 +80,20 @@ $sfd: "SF Pro Display", sans-serif;
 ._section-more {
     font-style: normal;
     font-weight: 600;
-    font-size: 17px;
+    @include adaptive-value("font-size", 17, 14, 1);
     line-height: 1.65em;
     color: #0165c4;
+
+    @media (max-width: 768px) {
+        display: none;
+    }
 }
 
 ._slider-button {
-    width: 64px;
-    height: 64px;
-    flex: 0 0 64px;
+    @include adaptive-value("height", 64, 35, 1);
+    flex-grow: 0;
+    flex-shrink: 0;
+    @include adaptive-value("flex-basis", 64, 35, 1);
     background: linear-gradient(217.3deg, #0165c4 5.7%, #f738fe 93.46%);
     display: flex;
     align-items: center;
@@ -104,7 +107,6 @@ $sfd: "SF Pro Display", sans-serif;
 }
 
 ._slider-pagination {
-    margin-top: 28px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -146,23 +148,19 @@ $sfd: "SF Pro Display", sans-serif;
             a {
                 color: inherit;
             }
-        }
 
-        & > :not(:first-child) {
-            &:before {
-                content: ">";
-                background-repeat: no-repeat;
-                background-size: contain;
-                display: block;
+            svg {
                 margin: 0 14px;
-                font-size: inherit;
+                display: block;
+                width: 9px;
+                stroke: #fff;
             }
         }
     }
 }
 
 .advantages {
-    margin-bottom: 76px;
+    @include adaptive-value("margin-bottom", 76, 63, 1);
 
     // .advantages__body
 
@@ -172,42 +170,95 @@ $sfd: "SF Pro Display", sans-serif;
     // .advantages__title
 
     &__title {
-        margin-bottom: 46px;
+        @include adaptive-value("margin-bottom", 46, 25, 1);
+        @media (max-width: 768px) {
+            margin-bottom: 0 !important;
+        }
     }
 
-    // .advantages__flex
+    // .advantages__swiper
+
+    &__swiper {
+        @media (max-width: 768px) {
+            @include adaptive-value("padding-top", 46, 25, 1);
+            margin-bottom: 30px;
+        }
+    }
+
+    @media (max-width: 500px) {
+        &__swiper {
+            margin-left: -20px;
+            margin-right: -20px;
+        }
+        .advantages__flex li {
+            width: calc(100% - 40px);
+        }
+    }
 
     &__flex {
         margin: 0 -15px;
 
-        display: flex;
-        flex-wrap: wrap;
+        @media (max-width: 768px) {
+            margin: 0;
+        }
+
+        li {
+            display: flex;
+            @media (max-width: 768px) {
+                flex-direction: column !important;
+                align-items: center;
+                margin: 0 25px;
+                max-width: 414px;
+            }
+
+            @media (max-width: 500px) {
+                max-width: none;
+            }
+        }
+
+        & > :nth-child(2n) {
+            flex-direction: row-reverse;
+        }
 
         // .advantages__flex-item
 
         &-item {
-            margin: 0 15px;
-            margin-bottom: 48px;
+            margin-right: 15px;
+            margin-left: 15px;
+            @include adaptive-value("margin-bottom", 48, 20, 1);
+            @media (max-width: 768px) {
+                margin: 0;
+                width: 100%;
+                max-width: none !important;
+            }
         }
 
         // .advantages__flex-contetent
 
         &-contetent {
-            padding: 40px 32px;
+            @include adaptive-value("padding-top", 40, 24, 1);
+            @include adaptive-value("padding-bottom", 40, 26, 1);
+            @include adaptive-value("padding-right", 32, 24, 1);
+            @include adaptive-value("padding-left", 32, 24, 1);
+
             background-color: #ffffff;
             box-shadow: 0px 4px 40px rgba(1, 101, 196, 0.2);
             border-radius: 20px;
-            width: max-content;
+            flex: 1 1 auto;
+            @media (max-width: 768px) {
+                flex: unset;
+                @include adaptive-value("margin-bottom", 45, 24, 1);
+            }
 
             &#goal {
-                max-width: 524px;
+                // max-width: 524px;
             }
             &#ok {
-                max-width: 413px;
+                // max-width: 413px;
             }
 
             &#like {
-                max-width: 635px;
+                // max-width: 635px;
             }
 
             // .advantages__flex-contetent-top
@@ -218,14 +269,14 @@ $sfd: "SF Pro Display", sans-serif;
                 justify-content: flex-start;
                 margin-bottom: 20px;
                 img {
-                    width: 72px;
+                    @include adaptive-value("width", 72, 48, 1);
                     margin-right: 20px;
                 }
 
                 span {
                     font-style: normal;
                     font-weight: 700;
-                    font-size: 22px;
+                    @include adaptive-value("font-size", 22, 20, 1);
                     line-height: 1.27em;
                     color: #0165c4;
                 }
@@ -236,9 +287,9 @@ $sfd: "SF Pro Display", sans-serif;
             &-descr {
                 font-style: normal;
                 font-weight: 400;
-                font-size: 18px;
                 line-height: 1.56em;
                 color: #333333;
+                @include adaptive-value("font-size", 18, 16, 1);
             }
         }
 
@@ -252,13 +303,21 @@ $sfd: "SF Pro Display", sans-serif;
             justify-content: center;
             flex-direction: column;
             max-width: 302px;
-            width: 302px;
-            height: 256px;
+            flex-grow: 0;
+            flex-shrink: 0;
+            @include adaptive-value("flex-basis", 302, 250, 1);
+            padding: 0 10px;
+
+            min-height: 256px;
+
+            @media (max-width: 768px) {
+                flex: unset;
+            }
 
             span {
                 font-style: normal;
                 font-weight: 900;
-                font-size: 64px;
+                @include adaptive-value("font-size", 64, 36, 1);
                 line-height: 1.25em;
                 text-align: center;
                 color: #ffffff;
@@ -267,7 +326,7 @@ $sfd: "SF Pro Display", sans-serif;
             p {
                 font-style: normal;
                 font-weight: 400;
-                font-size: 20px;
+                @include adaptive-value("font-size", 20, 17, 1);
                 line-height: 1.4em;
                 text-align: center;
                 color: #ffffff;
@@ -277,7 +336,8 @@ $sfd: "SF Pro Display", sans-serif;
 }
 
 .customers {
-    padding-bottom: 120px;
+    @include adaptive-value("padding-bottom", 120, 64, 1);
+
     // .customers__body
 
     &__body {
@@ -286,16 +346,55 @@ $sfd: "SF Pro Display", sans-serif;
     // .customers__title
 
     &__title {
-        margin-bottom: 38px;
+        @include adaptive-value("margin-bottom", 38, 25, 1);
+        @media (max-width: 768px) {
+            margin-bottom: 0 !important;
+        }
     }
 
     // .customers__flex
 
     &__flex {
-        display: flex;
-        justify-content: center;
-
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        justify-items: center;
         margin: 0 -15px;
+
+        @media (max-width: 768px) {
+            display: flex;
+            margin: 0 0 30px 0;
+            @include adaptive-value("margin-top", 38, 25, 1);
+
+            &-pagination {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                & > :not(:last-child) {
+                    margin-right: 8px;
+                }
+
+                span {
+                    width: 10px;
+                    height: 10px;
+                    background-color: #e0e0e0 !important;
+                    opacity: 1 !important;
+
+                    &.swiper-pagination-bullet-active {
+                        background-color: #f738fe !important;
+                    }
+                }
+            }
+        }
+
+        @media (max-width: 500px) {
+            &-swiper {
+                margin: 0 -20px;
+            }
+            .customers__flex-item {
+                width: calc(100% - 40px);
+            }
+        }
 
         // .customers__flex-item
 
@@ -304,12 +403,20 @@ $sfd: "SF Pro Display", sans-serif;
             background-color: #ffffff;
             box-shadow: 0px 4px 40px rgba(247, 56, 254, 0.2);
             border-radius: 20px;
-            padding: 40px 0 33px 0;
+            @include adaptive-value("padding-top", 40, 32, 1);
+            @include adaptive-value("padding-bottom", 33, 32, 1);
+            padding-left: 15px;
+            padding-right: 15px;
             display: flex;
             flex-direction: column;
             align-items: center;
             max-width: 413px;
-            flex: 1 1 auto;
+            width: calc(100% - 30px);
+
+            @media (max-width: 768px) {
+                width: 100%;
+                margin: 0 25px;
+            }
         }
 
         // .customers__flex-image
@@ -319,19 +426,29 @@ $sfd: "SF Pro Display", sans-serif;
 
             span {
                 position: absolute;
-                left: -105px;
+                @include adaptive-value("left", -105, 0, 1);
                 top: -60px;
                 font-style: normal;
                 font-weight: 900;
-                font-size: 128px;
+                @include adaptive-value("font-size", 128, 96, 1);
                 line-height: 1.27em;
                 text-align: center;
                 color: #f738fe;
                 opacity: 0.1;
+
+                @media (max-width: 768px) {
+                    left: -100% !important;
+                    top: -50px;
+                }
+
+                @media (max-width: 350px) {
+                    left: -82% !important;
+                }
             }
 
             img {
-                margin-bottom: 28px;
+                @include adaptive-value("width", 136, 104, 1);
+                @include adaptive-value("margin-bottom", 28, 23, 1);
             }
         }
 
@@ -340,11 +457,11 @@ $sfd: "SF Pro Display", sans-serif;
         &-title {
             font-style: normal;
             font-weight: 900;
-            font-size: 28px;
+            @include adaptive-value("font-size", 28, 20, 1);
+            @include adaptive-value("margin-bottom", 11, 3, 1);
             line-height: 1.29em;
             text-align: center;
             color: #f738fe;
-            margin-bottom: 11px;
         }
 
         // .customers__flex-descr
@@ -352,7 +469,7 @@ $sfd: "SF Pro Display", sans-serif;
         &-descr {
             font-style: normal;
             font-weight: 400;
-            font-size: 19px;
+            @include adaptive-value("font-size", 19, 16, 1);
             line-height: 1.47em;
             text-align: center;
             color: #333333;
@@ -360,8 +477,125 @@ $sfd: "SF Pro Display", sans-serif;
     }
 }
 
+.videoblog {
+    @include adaptive-value("margin-bottom", 122, 63, 1);
+    // .videoblog__body
+
+    &__body {
+    }
+
+    // .videoblog__top
+
+    &__top {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        @include adaptive-value("margin-bottom", 38, 25, 1);
+    }
+
+    // .videoblog__title
+
+    &__title {
+    }
+
+    // .videoblog__slider
+
+    &__slider {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        // .videoblog__slider-prev
+
+        &-prev {
+            img {
+                transform: rotate(180deg);
+            }
+        }
+
+        &-prev,
+        &-next {
+            @include adaptive-value("flex-basis", 64, 35, 1);
+            @include adaptive-value("height", 64, 35, 1);
+            flex-shrink: 0;
+            flex-grow: 0;
+            background: linear-gradient(217.3deg, #0165c4 5.7%, #f738fe 93.46%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            img {
+                pointer-events: none;
+            }
+
+            @media (max-width: 768px) {
+                display: none;
+            }
+        }
+
+        // .videoblog__slider-wrapper
+
+        &-wrapper {
+            flex: 1 1 auto;
+            box-shadow: 0px 4px 40px rgba(247, 56, 254, 0.2);
+            border-radius: 20px;
+            @include adaptive-value("margin-left", 47, 25, 1);
+            @include adaptive-value("margin-right", 47, 25, 1);
+
+            @media (max-width: 768px) {
+                margin-left: 0 !important;
+                margin-right: 0 !important;
+            }
+        }
+
+        // .videoblog__slider-body
+
+        &-body {
+        }
+
+        // .videoblog__slider-slide
+
+        &-slide {
+            iframe {
+                width: 100%;
+                @include adaptive-value("min-height", 608, 192, 1);
+            }
+        }
+
+        // .videoblog__slider-next
+
+        &-next {
+        }
+
+        // .videoblog__slider-pagination
+
+        &-pagination {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            @include adaptive-value("margin-top", 28, 30, 1);
+            position: static;
+
+            & > :not(:last-child) {
+                margin-right: 12px;
+            }
+            span {
+                width: 12px;
+                height: 12px;
+                border-radius: 50%;
+                background-color: #e0e0e0;
+                opacity: 1 !important;
+
+                &.swiper-pagination-bullet-active {
+                    background-color: #f738fe;
+                }
+            }
+        }
+    }
+}
+
 .faq {
-    margin-bottom: 120px;
+    @include adaptive-value("margin-bottom", 120, 72, 1);
+
     // .faq__body
 
     &__body {
@@ -376,27 +610,50 @@ $sfd: "SF Pro Display", sans-serif;
     // .faq__column
 
     &__column {
-        margin-bottom: 48px;
+        @include adaptive-value("margin-bottom", 48, 32, 1);
+
         // .faq__column-body
 
         &-body {
             & > :not(:last-child) {
-                margin-bottom: 32px;
+                @include adaptive-value("margin-bottom", 32, 24, 1);
             }
         }
 
         // .faq__column-item
 
         &-item {
-            font-style: normal;
-            font-weight: 600;
-            font-size: 22px;
-            line-height: 1.27em;
-            color: #0165c4;
-            padding: 26px 32px;
             background-color: #ffffff;
             box-shadow: 0px 4px 40px rgba(1, 101, 196, 0.2);
             border-radius: 15px;
+            @include adaptive-value("padding-top", 26, 12, 1);
+            @include adaptive-value("padding-bottom", 26, 16, 1);
+            @include adaptive-value("padding-left", 32, 18, 1);
+            @include adaptive-value("padding-right", 32, 18, 1);
+
+            &._active {
+                .faq__column-answer {
+                    max-height: 400px;
+                }
+
+                .faq__column-question {
+                    img {
+                        transform: rotate(180deg);
+                    }
+                    span {
+                        background: linear-gradient(110.99deg, #0165c4 12.66%, #f738fe 81.62%);
+                        -webkit-background-clip: text;
+                        -webkit-text-fill-color: transparent;
+                        background-clip: text;
+                        text-fill-color: transparent;
+
+                        @media (max-width: 540px) {
+                            font-weight: 900;
+                            font-size: 19px !important;
+                        }
+                    }
+                }
+            }
         }
 
         // .faq__column-question
@@ -407,9 +664,25 @@ $sfd: "SF Pro Display", sans-serif;
             justify-content: space-between;
             cursor: pointer;
 
+            span {
+                font-style: normal;
+                font-weight: 600;
+                @include adaptive-value("font-size", 22, 18, 1);
+                line-height: 1.27em;
+                color: #0165c4;
+            }
+
             span,
             img {
                 pointer-events: none;
+                transition: all 0.3s ease 0s;
+            }
+
+            img {
+                margin-left: 15px;
+                @media (max-width: 540px) {
+                    display: none;
+                }
             }
         }
 
@@ -417,17 +690,17 @@ $sfd: "SF Pro Display", sans-serif;
 
         &-answer {
             max-height: 0;
-            transition: all 0.5s ease 0s;
+            transition: all 0.3s linear 0s;
             overflow: hidden;
 
             p {
                 font-style: normal;
                 font-weight: 400;
-                font-size: 18px;
+                @include adaptive-value("font-size", 18, 16, 1);
                 line-height: 1.56em;
                 color: #333333;
-                padding-top: 19px;
-                margin-top: 18px;
+                @include adaptive-value("padding-top", 19, 13, 1);
+                @include adaptive-value("margin-top", 18, 13, 1);
                 border-top: 1px solid rgba(247, 56, 254, 0.3);
             }
         }
@@ -438,10 +711,18 @@ $sfd: "SF Pro Display", sans-serif;
     &__call {
         background: linear-gradient(110.99deg, #0165c4 12.66%, #f738fe 81.62%);
         border-radius: 20px;
-        padding: 29px 91px 39px 58px;
+        @include adaptive-value("padding-top", 29, 27, 1);
+        @include adaptive-value("padding-bottom", 39, 27, 1);
+        @include adaptive-value("padding-left", 58, 15, 1);
+        @include adaptive-value("padding-right", 91, 15, 1);
         display: flex;
         align-items: center;
         justify-content: space-between;
+
+        @media (max-width: 768px) {
+            flex-direction: column;
+            justify-content: flex-start;
+        }
 
         // .faq__call-left
 
@@ -449,17 +730,29 @@ $sfd: "SF Pro Display", sans-serif;
             h3 {
                 font-style: normal;
                 font-weight: 700;
-                font-size: 35px;
                 line-height: 1.31em;
                 color: #ffffff;
-                margin-bottom: 14px;
+                @include adaptive-value("font-size", 35, 21, 1);
+                @include adaptive-value("margin-bottom", 14, 7, 1);
+
+                @media (max-width: 768px) {
+                    text-align: center;
+                }
             }
             p {
                 font-style: normal;
                 font-weight: 400;
-                font-size: 21px;
                 line-height: 1.52em;
                 color: #ffffff;
+                @include adaptive-value("font-size", 21, 17, 1);
+                @media (max-width: 1096px) {
+                    br {
+                        display: none;
+                    }
+                }
+                @media (max-width: 768px) {
+                    text-align: center;
+                }
             }
         }
 
@@ -469,11 +762,18 @@ $sfd: "SF Pro Display", sans-serif;
             display: flex;
             flex-direction: column;
             align-items: center;
+            @include adaptive-value("margin-left", 50, 0, 1);
+
+            @media (max-width: 1096px) {
+                margin-left: 0 !important;
+                @include adaptive-value("margin-top", 50, 24, 1);
+            }
 
             span {
                 font-style: normal;
                 font-weight: 400;
-                font-size: 22px;
+                @include adaptive-value("font-size", 22, 16, 1);
+                @include adaptive-value("margin-bottom", 7, 0, 1);
                 line-height: 1.64em;
                 color: #ffffff;
                 margin-bottom: 7px;
@@ -482,9 +782,11 @@ $sfd: "SF Pro Display", sans-serif;
             a {
                 font-style: normal;
                 font-weight: 900;
-                font-size: 40px;
+                @include adaptive-value("font-size", 40, 32, 1);
                 line-height: 1.25em;
                 color: #ffffff;
+                text-align: center;
+                white-space: nowrap;
             }
         }
     }
@@ -493,46 +795,83 @@ $sfd: "SF Pro Display", sans-serif;
 .form {
     background-color: #0165c4;
     border-radius: 90px 0px;
-    padding: 66px 0 47px 0;
     margin-bottom: 90px;
+    @include adaptive-value("padding-top", 66, 47, 1);
+    @include adaptive-value("padding-bottom", 47, 34, 1);
+
+    @media (max-width: 768px) {
+        border-radius: 60px 0px;
+    }
+
     // .form__inputs
 
     &__inputs {
-        display: flex;
-        justify-content: center;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+
         & > :first-child {
             margin-right: 15px;
         }
         & > :last-child {
             margin-left: 15px;
         }
-        div {
-            flex: 1 1 auto;
-            max-width: 524px;
+
+        @media (max-width: 768px) {
+            grid-template-columns: 1fr;
+
+            & > :first-child,
+            & > :last-child {
+                margin-left: 0;
+                margin-right: 0;
+            }
+        }
+    }
+
+    input {
+        margin-left: auto;
+        @media (max-width: 768px) {
+            margin-left: unset;
         }
     }
 
     input,
     textarea {
+        max-width: 524px;
         display: block;
-        padding: 20px 10px 20px 30px;
+        @include adaptive-value("padding-top", 20, 16, 1);
+        @include adaptive-value("padding-bottom", 20, 16, 1);
+        @include adaptive-value("padding-right", 20, 16, 1);
+        @include adaptive-value("padding-left", 30, 24, 1);
         font-style: normal;
         font-weight: 400;
-        font-size: 18px;
+        @include adaptive-value("font-size", 18, 16, 1);
+
         line-height: 1.33em;
         background-color: #ffffff;
         border-radius: 10px;
         color: #4f4f4f;
         outline: none;
         width: 100%;
+
+        @media (max-width: 768px) {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        @media (max-width: 600px) {
+            max-width: none;
+        }
     }
     textarea {
         resize: none;
-        max-height: 255px;
+        @include adaptive-value("max-height", 255, 210, 1);
+        @media (max-width: 768px) {
+            @include adaptive-value("margin-top", 32, 24, 1);
+        }
     }
 
     input:not(:last-child) {
-        margin-bottom: 32px;
+        @include adaptive-value("margin-bottom", 32, 24, 1);
     }
 
     // .form__title
@@ -540,7 +879,7 @@ $sfd: "SF Pro Display", sans-serif;
     &__title {
         font-style: normal;
         font-weight: 700;
-        font-size: 40px;
+        @include adaptive-value("font-size", 40, 26, 1);
         line-height: 1.2em;
         color: #ffffff;
         margin-bottom: 7px;
@@ -552,10 +891,12 @@ $sfd: "SF Pro Display", sans-serif;
     &__descr {
         font-style: normal;
         font-weight: 400;
-        font-size: 21px;
+        @include adaptive-value("font-size", 21, 17, 1);
         line-height: 1.52em;
         text-align: center;
         margin-bottom: 47px;
+        @include adaptive-value("margin-botom", 47, 34, 1);
+
         color: #ffffff;
     }
 
@@ -567,22 +908,23 @@ $sfd: "SF Pro Display", sans-serif;
         border-radius: 100px;
         font-style: normal;
         font-weight: 700;
-        font-size: 20px;
-        line-height: 28px;
-        width: 351px;
+        @include adaptive-value("font-size", 20, 16, 1);
+        line-height: 1.4em;
+        @include adaptive-value("width", 351, 257, 1);
         color: #ffffff;
-        padding: 22px 0;
-        margin-top: 56px;
+        @include adaptive-value("padding-top", 22, 16, 1);
+        @include adaptive-value("padding-bottom", 22, 16, 1);
         display: block;
+        @include adaptive-value("margin-top", 56, 40, 1);
     }
     a {
         display: block;
         margin-left: auto;
         margin-right: auto;
-        margin-top: 29px;
+        @include adaptive-value("margin-top", 29, 14, 1);
         font-style: normal;
         font-weight: 400;
-        font-size: 18px;
+        @include adaptive-value("font-size", 18, 16, 1);
         line-height: 1.44em;
         text-align: center;
         color: #ffffff;
@@ -595,10 +937,18 @@ $sfd: "SF Pro Display", sans-serif;
     &__body {
         border-radius: 20px;
         background: linear-gradient(110.99deg, #0165c4 12.66%, #f738fe 81.62%);
-        padding: 29px 91px 39px 58px;
+        @include adaptive-value("padding-top", 29, 27, 1);
+        @include adaptive-value("padding-bottom", 39, 36, 1);
+        @include adaptive-value("padding-left", 58, 18, 1);
+        @include adaptive-value("padding-right", 91, 18, 1);
         display: flex;
         align-items: center;
         justify-content: space-between;
+
+        @media (max-width: 768px) {
+            flex-direction: column;
+            justify-content: flex-start;
+        }
     }
     // .follow__left
 
@@ -606,17 +956,30 @@ $sfd: "SF Pro Display", sans-serif;
         h3 {
             font-style: normal;
             font-weight: 700;
-            font-size: 35px;
+            @include adaptive-value("font-size", 35, 21, 1);
+            @include adaptive-value("margin-bottom", 14, 7, 1);
             line-height: 1.31em;
             color: #ffffff;
-            margin-bottom: 14px;
+            @media (max-width: 768px) {
+                text-align: center;
+            }
         }
         p {
             font-style: normal;
             font-weight: 400;
-            font-size: 21px;
+            @include adaptive-value("font-size", 21, 17, 1);
             line-height: 1.52em;
             color: #ffffff;
+
+            @media (max-width: 1250px) {
+                br {
+                    display: none;
+                }
+            }
+
+            @media (max-width: 768px) {
+                text-align: center;
+            }
         }
     }
 
@@ -626,17 +989,45 @@ $sfd: "SF Pro Display", sans-serif;
         display: flex;
         flex-direction: column;
         align-items: center;
+        @include adaptive-value("margin-left", 50, 0, 1);
+
+        @media (max-width: 768px) {
+            margin-left: 0 !important;
+            @include adaptive-value("margin-top", 50, 24, 1);
+        }
+
         form {
-            width: 474px;
+            @include adaptive-value("width", 474, 200, 1);
+
             display: flex;
             align-items: center;
             justify-content: flex-start;
             background-color: #ffffff;
             border-radius: 10px;
-            padding: 12px 20px 12px 30px;
+            padding: 12px 12px 12px 30px;
+
+            @media (max-width: 768px) {
+                width: 100%;
+                background-color: unset;
+                padding: 0;
+                flex-direction: column;
+            }
         }
         input {
             flex: 1 1 auto;
+            font-style: normal;
+            font-weight: 400;
+            @include adaptive-value("font-size", 18, 16, 1);
+            line-height: 1.33em;
+            color: #4f4f4f;
+            width: 100%;
+
+            @media (max-width: 768px) {
+                background-color: #ffffff;
+                border-radius: 10px;
+                padding: 16px 20px 16px 20px;
+                margin-bottom: 24px;
+            }
         }
         button {
             width: 40px;
@@ -646,15 +1037,41 @@ $sfd: "SF Pro Display", sans-serif;
             display: flex;
             align-items: center;
             justify-content: center;
+
+            span {
+                display: none;
+                font-style: normal;
+                font-weight: 700;
+                font-size: 16px;
+                line-height: 1.5;
+                color: #ffffff;
+                margin: 0 !important;
+            }
+
+            @media (max-width: 768px) {
+                height: auto;
+                width: 217px;
+                padding: 12px 0;
+                border-radius: 100px;
+                box-shadow: 0px 0px 30px rgba(255, 255, 255, 0.3);
+                background-color: #000;
+
+                img {
+                    display: none;
+                }
+                span {
+                    display: block;
+                }
+            }
         }
         span {
             margin-top: 13px;
             font-style: normal;
             font-weight: 400;
-            font-size: 18px;
             line-height: 1.5em;
             color: #ffffff;
-            margin-bottom: 7px;
+            @include adaptive-value("font-size", 18, 16, 1);
+            text-align: center;
         }
     }
 }
