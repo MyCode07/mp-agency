@@ -1,15 +1,19 @@
-
 .product {
     background-color: #ffffff;
     overflow: hidden;
     box-shadow: 0px 4px 40px rgba(247, 56, 254, 0.2);
     border-radius: 20px;
     max-width: 413px;
-    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
     // .product__body
 
     &__body {
-        padding: 28px 45px 0 45px;
+        @include adaptive-value("padding-top", 30, 27, 1);
+        @include adaptive-value("padding-left", 39, 20, 1);
+        @include adaptive-value("padding-right", 39, 20, 1);
     }
 
     // .product__title
@@ -17,7 +21,8 @@
     &__title {
         font-style: normal;
         font-weight: 900;
-        font-size: 28px;
+        @include adaptive-value("font-size", 28, 22, 1);
+        @include adaptive-value("margin-bottom", 29, 23, 1);
         line-height: 1.29em;
         text-align: center;
         background: linear-gradient(110.99deg, #0165c4 12.66%, #f738fe 81.62%);
@@ -25,11 +30,10 @@
         -webkit-text-fill-color: transparent;
         background-clip: text;
         text-fill-color: transparent;
-        margin-bottom: 29px;
     }
 
     ol {
-        margin-bottom: 33px;
+        @include adaptive-value("margin-bottom", 33, 24, 1);
 
         & > :not(:last-child) {
             margin-bottom: 16px;
@@ -38,7 +42,7 @@
         li {
             font-style: normal;
             font-weight: 400;
-            font-size: 19px;
+            @include adaptive-value("font-size", 19, 17, 1);
             line-height: 1.26em;
             color: #333333;
             display: flex;
@@ -47,9 +51,9 @@
 
             &:before {
                 content: "";
-                width: 12px;
-                flex: 0 0 12px;
-                height: 12px;
+                width: 0.63em;
+                flex: 0 0 0.63em;
+                height: 0.63em;
                 background: linear-gradient(217.3deg, #0165c4 5.7%, #f738fe 93.46%);
                 margin-right: 14px;
                 border-radius: 50%;
@@ -60,11 +64,11 @@
     label {
         font-style: normal;
         font-weight: 400;
-        font-size: 18px;
+        @include adaptive-value("font-size", 18, 16, 1);
+        @include adaptive-value("margin-bottom", 3, 1, 1);
         line-height: 1.33em;
         text-align: center;
         color: #828282;
-        margin-bottom: 3px;
         display: block;
     }
 
@@ -73,10 +77,10 @@
     &__price {
         font-style: normal;
         font-weight: 900;
-        font-size: 28px;
+        @include adaptive-value("font-size", 28, 26, 1);
+        @include adaptive-value("margin-bottom", 29, 33, 1);
         line-height: 0.93em;
         text-align: center;
-        margin-bottom: 29px;
         color: #0165c4;
         display: block;
     }
@@ -88,10 +92,68 @@
         padding: 18px 0;
         font-style: normal;
         font-weight: 600;
-        font-size: 21px;
+        @include adaptive-value("font-size", 21, 18, 1);
         line-height: 1.71em;
         color: #ffffff;
         text-align: center;
         background: linear-gradient(110.99deg, #0165c4 12.66%, #f738fe 81.62%);
+    }
+}
+
+.products {
+    // .products-swiper
+
+    &-swiper {
+        @media (max-width: 768px) {
+            margin-bottom: 30px;
+            margin-top: -30px;
+            padding-top: 30px;
+        }
+
+        @media (max-width: 500px) {
+            margin-left: -20px;
+            margin-right: -20px;
+        }
+    }
+
+    // .products-pagination
+
+    &-pagination {
+        display: none;
+        @media (max-width: 768px) {
+            display: flex;
+        }
+    }
+
+    &-grid {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        @include adaptive-value("margin-left", -30, -10, 1);
+        @include adaptive-value("margin-right", -30, -10, 1);
+
+        @media (max-width: 768px) {
+            justify-content: unset;
+            flex-wrap: unset;
+            margin: 0 !important;
+        }
+
+        article {
+            @include adaptive-value("margin-left", 15, 5, 1);
+            @include adaptive-value("margin-right", 15, 5, 1);
+            @include adaptive-value("margin-bottom", 48, 24, 1);
+
+            @include adaptive-value("max-width", 413, 315, 1);
+
+            @media (max-width: 768px) {
+                margin: 0 25px !important;
+                max-width: 413px !important;
+            }
+
+            @media (max-width: 500px) {
+                max-width: none;
+                width: calc(100% - 40px);
+            }
+        }
     }
 }

@@ -1,15 +1,22 @@
 .about {
-    margin-bottom: 122px;
+    @include adaptive-value("margin-bottom", 122, 63, 1);
+
     // .about__body
 
     &__body {
         display: flex;
         justify-content: space-between;
+
+        @media (max-width: 992px) {
+            flex-direction: column-reverse;
+            justify-content: flex-start;
+        }
     }
 
     // .about__title
 
     &__title {
+        @include adaptive-value("margin-bottom", 31, 15, 1);
     }
 
     // .about__form
@@ -17,25 +24,35 @@
     &__form {
         background-color: #0165c4;
         border-radius: 30px;
-        padding: 55px 80px 55px 80px;
+        @include adaptive-value("padding-top", 55, 47, 1);
+        @include adaptive-value("padding-left", 80, 20, 1);
+        @include adaptive-value("padding-right", 80, 20, 1);
+        @include adaptive-value("padding-bottom", 55, 34, 1);
+        flex-basis: 0;
+        flex-shrink: 0;
+        @include adaptive-value("flex-basis", 635, 200, 1);
+        @include adaptive-value("margin-right", 71, 0, 1);
 
-        flex: 0 0 635px;
-        margin-right: 72px;
+        @media (max-width: 992px) {
+            margin: 66px -20px 0 -20px !important;
+            border-radius: 30px 0 30px 0;
+        }
 
         h3 {
-            margin-bottom: 38px;
             font-style: normal;
             font-weight: 700;
-            font-size: 40px;
+            @include adaptive-value("font-size", 40, 26, 1);
+            @include adaptive-value("margin-bottom", 38, 33, 1);
             line-height: 1.2em;
             color: #ffffff;
             text-align: center;
         }
 
         form {
-            display: flex;
-            align-items: center;
-            flex-direction: column;
+            // display: flex;
+            // align-items: center;
+            // flex-direction: column;
+
             input,
             textarea {
                 width: 100%;
@@ -43,44 +60,63 @@
                 border-radius: 10px;
                 font-style: normal;
                 font-weight: 400;
-                font-size: 18px;
+                @include adaptive-value("font-size", 18, 16, 1);
                 line-height: 1.33em;
                 color: #4f4f4f;
-                padding: 20px 15px 20px 30px;
+                @include adaptive-value("padding-top", 20, 16, 1);
+                @include adaptive-value("padding-bottom", 20, 16, 1);
+                @include adaptive-value("padding-left", 30, 24, 1);
+                @include adaptive-value("padding-right", 20, 15, 1);
+                max-width: 524px;
+                margin-left: auto;
+                margin-right: auto;
+                display: block;
+
+                @media (max-width: 524px) {
+                    max-width: none;
+                }
             }
 
             input {
-                margin-bottom: 32px;
+                @include adaptive-value("margin-bottom", 32, 24, 1);
             }
 
             textarea {
-                height: 160px;
                 resize: none;
+                @include adaptive-value("height", 160, 136, 1);
             }
 
             button {
                 background-color: #f738fe;
                 box-shadow: 0px 0px 30px rgba(255, 255, 255, 0.3);
                 border-radius: 100px;
-                padding: 22px 0;
                 font-style: normal;
                 font-weight: 700;
-                font-size: 20px;
                 line-height: 1.4em;
                 color: #ffffff;
                 display: block;
-                margin: 48px 0 29px 0;
+                @include adaptive-value("margin-top", 48, 40, 1);
+                @include adaptive-value("margin-bottom", 29, 14, 1);
+                @include adaptive-value("font-size", 20, 16, 1);
+                @include adaptive-value("padding-top", 22, 16, 1);
+                @include adaptive-value("padding-bottom", 22, 16, 1);
                 text-align: center;
-                width: 351px;
+                align-content: flex-end;
+                @include adaptive-value("width", 351, 257, 1);
+                margin-left: auto;
+                margin-right: auto;
             }
 
             a {
                 font-style: normal;
                 font-weight: 400;
-                font-size: 18px;
+                @include adaptive-value("font-size", 18, 16, 1);
                 line-height: 1.44em;
                 text-align: center;
                 color: #ffffff;
+                margin-left: auto;
+                margin-right: auto;
+                display: block;
             }
         }
     }
@@ -90,23 +126,32 @@
     &__content {
         margin-top: 34px;
         position: relative;
+        z-index: 1;
+
+        @media (max-width: 992px) {
+            margin-top: 0;
+        }
 
         img {
             position: absolute;
             left: 39px;
-            max-width: 627px;
             bottom: 0;
             z-index: 0;
-        }
+            @include adaptive-value("width", 624, 257, 1);
+            z-index: -1;
 
-        h2 {
-            margin-bottom: 31px;
+            @media (max-width: 992px) {
+                right: -20px;
+                left: unset;
+                bottom: 50%;
+                transform: translate(0, 50%);
+            }
         }
 
         p {
             font-style: normal;
             font-weight: 400;
-            font-size: 20px;
+            @include adaptive-value("font-size", 20, 16, 1);
             line-height: 1.6em;
             color: #333333;
         }
@@ -114,13 +159,13 @@
         ol {
             margin: 24px 0;
             & > :not(:last-child) {
-                margin-bottom: 8px;
+                @include adaptive-value("margin-bottom", 8, 16, 1);
             }
 
             li {
                 font-style: normal;
                 font-weight: 400;
-                font-size: 20px;
+                @include adaptive-value("font-size", 20, 16, 1);
                 line-height: 1.6em;
                 color: #333333;
                 display: flex;
@@ -129,10 +174,10 @@
 
                 &:before {
                     content: "";
-                    width: 12px;
-                    height: 12px;
+                    @include adaptive-value("width", 12, 10, 1);
+                    @include adaptive-value("height", 12, 10, 1);
+                    @include adaptive-value("margin-right", 14, 8, 1);
                     background: linear-gradient(217.3deg, #0165c4 5.7%, #f738fe 93.46%);
-                    margin-right: 14px;
                     border-radius: 50%;
                 }
             }
@@ -143,12 +188,18 @@
 .whyme {
     background-color: #121212;
     border-radius: 0px 90px;
-    margin-bottom: 122px;
+    @include adaptive-value("margin-bottom", 122, 95, 1);
+
     position: relative;
-    padding: 66px 0 80px 0;
     background-repeat: no-repeat;
     background-position: right bottom;
     background-size: contain;
+    overflow: unset !important;
+
+    @media (max-width: 768px) {
+        border-radius: 0px 60px 0 0;
+        background-position: top;
+    }
 
     &:before {
         position: absolute;
@@ -160,6 +211,7 @@
         z-index: 0;
         background: linear-gradient(217.3deg, rgba(1, 101, 196, 0.78) 5.7%, #f738fe 93.46%);
         opacity: 0.72;
+        border-radius: inherit;
     }
 
     // .whyme__body
@@ -167,12 +219,17 @@
     &__body {
         position: relative;
         z-index: 1;
+        padding-bottom: 80px;
+        @include adaptive-value("padding-top", 66, 271, 1);
+        @media (max-width: 768px) {
+            padding-bottom: 0;
+        }
     }
 
     // .whyme__title
 
     &__title {
-        margin-bottom: 30px;
+        @include adaptive-value("margin-bottom", 30, 15, 1);
     }
 
     // .whyme__description
@@ -180,26 +237,46 @@
     &__description {
         font-style: normal;
         font-weight: 400;
-        font-size: 20px;
+        @include adaptive-value("font-size", 20, 16, 1);
+
         line-height: 1.6em;
         color: #ffffff;
-        margin-bottom: 48px;
+
+        @media (min-width: 769px) {
+            margin-bottom: 48px;
+        }
+
         max-width: 635px;
+        @media (max-width: 635px) {
+            max-width: none;
+        }
     }
 
     // .whyme__btn
 
     &__btn {
         display: block;
-        width: 303px;
+        @include adaptive-value("width", 303, 275, 1);
+        @include adaptive-value("padding-top", 23, 16, 1);
+        @include adaptive-value("padding-bottom", 23, 16, 1);
+        @include adaptive-value("font-size", 20, 16, 1);
+
+        @media (max-width: 768px) {
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+            bottom: -33px;
+            box-shadow: 0px 4px 40px rgb(247 56 254 / 20%);
+        }
     }
 }
 
 .consult {
-    margin-bottom: 122px;
     // .consult__steps
 
     &__steps {
+        @include adaptive-value("margin-bottom", 10, 39, 1);
+
         // .consult__steps-body
 
         &-body {
@@ -208,7 +285,7 @@
         // .consult__steps-title
 
         &-title {
-            margin-bottom: 38px;
+            @include adaptive-value("margin-bottom", 38, 25, 1);
         }
 
         // .consult__steps-grid
@@ -219,10 +296,22 @@
 }
 
 .grid-steps {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin: 0 -30px;
+    @media (min-width: 993px) {
+        @include adaptive-value("margin-left", -15, -10, 1);
+        @include adaptive-value("margin-right", -15, -10, 1);
+
+        display: grid;
+        justify-items: center;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    @media (max-width: 992px) {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        @include adaptive-value("margin-left", -30, -20, 1);
+        @include adaptive-value("margin-right", -30, -20, 1);
+    }
 
     // .grid-steps__item
 
@@ -230,13 +319,31 @@
         background-color: #ffffff;
         box-shadow: 0px 4px 40px rgba(247, 56, 254, 0.2);
         border-radius: 20px;
-        margin: 0 15px 112px 15px;
-        max-width: 413px;
-        padding: 33px 26px;
+        @include adaptive-value("margin-bottom", 112, 24, 1);
+        @include adaptive-value("margin-left", 15, 10, 1);
+        @include adaptive-value("margin-right", 15, 10, 1);
+
+        padding-bottom: 33px;
+        @include adaptive-value("padding-top", 33, 23, 1);
+        @include adaptive-value("padding-left", 26, 30, 1);
+        @include adaptive-value("padding-right", 26, 30, 1);
         position: relative;
-        height: 272px;
+        min-height: 272px;
+        height: fit-content;
         display: flex;
         align-items: flex-end;
+
+        @media (min-width: 993px) {
+            @include adaptive-value("flex-basis", 413, 200, 1);
+        }
+
+        @media (max-width: 992px) {
+            img {
+                display: none;
+            }
+            margin-top: 0 !important;
+            @include adaptive-value("flex-basis", 413, 280, 1);
+        }
 
         &#spet-1 {
             img {
@@ -245,7 +352,8 @@
             }
         }
         &#spet-2 {
-            margin-top: 62px;
+            @include adaptive-value("margin-top", 62, 0, 1);
+
             img {
                 right: -124px;
                 bottom: -13px;
@@ -264,7 +372,7 @@
             }
         }
         &#spet-5 {
-            margin-top: 62px;
+            @include adaptive-value("margin-top", 62, 0, 1);
 
             img {
                 top: -51px;
@@ -280,7 +388,7 @@
             span {
                 font-style: normal;
                 font-weight: 900;
-                font-size: 128px;
+                @include adaptive-value("font-size", 128, 96, 1);
                 line-height: 1.27em;
                 text-align: center;
                 color: #f738fe;
@@ -296,17 +404,17 @@
             div {
                 font-style: normal;
                 font-weight: 900;
-                font-size: 28px;
+                @include adaptive-value("font-size", 28, 22, 1);
                 line-height: 1.29em;
                 text-align: center;
                 color: #0165c4;
-                margin-bottom: 19px;
+                @include adaptive-value("margin-bottom", 19, 17, 1);
             }
 
             p {
                 font-style: normal;
                 font-weight: 400;
-                font-size: 19px;
+                @include adaptive-value("font-size", 19, 16, 1);
                 line-height: 1.47em;
                 text-align: center;
                 color: #333333;
@@ -321,13 +429,14 @@
 }
 
 .consult__pricing {
-    margin-bottom: 192px;
+    @include adaptive-value("margin-bottom", 192, 72, 1);
+
     overflow: unset !important;
 
     // .consult__pricing-title
 
     &-title {
-        margin-bottom: 54px;
+        @include adaptive-value("margin-bottom", 54, 25, 1);
     }
 
     // .consult__pricing-body
@@ -354,6 +463,10 @@
             height: 100%;
             border-radius: 80px;
             z-index: 1;
+
+            @media (max-width: 768px) {
+                display: none;
+            }
         }
     }
 
@@ -383,14 +496,32 @@
         border-radius: 80px 0 0 80px;
     }
 
+    &-leftimage,
+    &-rightimage {
+        @media (max-width: 768px) {
+            display: none;
+        }
+    }
+
     // .consult__pricing-item
 
     &-item {
         max-width: 474px !important;
+        @include adaptive-value("width", 474, 355, 1);
         position: absolute;
         top: -16px;
-        left: 50%;
-        transform: translate(-50%, 0);
+        @include adaptive-value("right", 414, -275, 1);
+        // transform: translate(-50%, 0);
         z-index: 2;
+
+        @media (max-width: 768px) {
+            position: static;
+            margin: 0 auto;
+        }
+
+        @media (max-width:447px){
+            max-width: none !important;
+            width: 100% !important;
+        }
     }
 }

@@ -17,7 +17,38 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        margin: 0 -30px;
+        @include adaptive-value("margin-left", -30, -10, 1);
+        @include adaptive-value("margin-right", -30, -10, 1);
+
+        @media (max-width: 768px) {
+            justify-content: unset;
+            flex-wrap: unset;
+            margin: 0 !important;
+        }
+    }
+
+    // .services__pricing-swiper
+
+    &-swiper {
+        @media (max-width: 768px) {
+            margin-bottom: 30px;
+            margin-top: -30px;
+            padding-top: 30px;
+        }
+
+        @media (max-width: 500px) {
+            margin-left: -20px;
+            margin-right: -20px;
+        }
+    }
+
+    // .services__pricing-pagination
+
+    &-pagination {
+        display: none;
+        @media (max-width: 768px) {
+            display: flex;
+        }
     }
 }
 
@@ -25,13 +56,30 @@
     background-color: #ffffff;
     box-shadow: 0px 4px 40px rgba(1, 101, 196, 0.2);
     border-radius: 20px;
-    max-width: 413px;
-    margin: 0 15px 34px 15px;
+
+    @include adaptive-value("margin-left", 15, 5, 1);
+    @include adaptive-value("margin-right", 15, 5, 1);
+    @include adaptive-value("margin-bottom", 34, 24, 1);
+
+    @include adaptive-value("max-width", 413, 315, 1);
+
+    @media (max-width: 768px) {
+        margin: 0 25px !important;
+        max-width: 413px !important;
+    }
+
+    @media (max-width: 500px) {
+        max-width: none;
+        width: calc(100% - 40px);
+    }
 
     // .service-single__product-body
 
     &-body {
-        padding: 92px 36px 24px 36px;
+        @include adaptive-value("padding-top", 82, 58, 1);
+        @include adaptive-value("padding-bottom", 24, 21, 1);
+        @include adaptive-value("padding-left", 36, 30, 1);
+        @include adaptive-value("padding-right", 36, 30, 1);
         position: relative;
     }
 
@@ -39,11 +87,11 @@
 
     &-number {
         position: absolute;
-        top: 0;
+        @include adaptive-value("top", 0, -15, 1);
         left: 24px;
         font-style: normal;
         font-weight: 900;
-        font-size: 128px;
+        @include adaptive-value("font-size", 128, 96, 1);
         line-height: 1.27em;
         color: #f738fe;
         opacity: 0.1;
@@ -54,7 +102,8 @@
     &-title {
         font-style: normal;
         font-weight: 900;
-        font-size: 28px;
+        @include adaptive-value("font-size", 28, 22, 1);
+        @include adaptive-value("margin-bottom", 17, 12, 1);
         line-height: 1.29em;
         color: #0165c4;
         margin-bottom: 17px;
@@ -65,16 +114,16 @@
     &-descr {
         font-style: normal;
         font-weight: 400;
-        font-size: 18px;
+        @include adaptive-value("font-size", 18, 16, 1);
         line-height: 1.44em;
         color: #333333;
-        margin-bottom: 18px;
+        margin-bottom: 1em;
     }
 
     label {
         font-style: normal;
         font-weight: 400;
-        font-size: 18px;
+        @include adaptive-value("font-size", 18, 16, 1);
         line-height: 1.44em;
         text-align: center;
         color: #4f4f4f;
@@ -86,7 +135,7 @@
     &-price {
         font-style: normal;
         font-weight: 900;
-        font-size: 23px;
+        @include adaptive-value("font-size", 23, 20, 1);
         line-height: 1.39em;
         background: linear-gradient(110.99deg, #0165c4 12.66%, #f738fe 81.62%);
         -webkit-background-clip: text;

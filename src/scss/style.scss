@@ -128,8 +128,35 @@ $sfd: "SF Pro Display", sans-serif;
     }
 }
 
+.back__index {
+    display: none;
+    @media (max-width: 768px) {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        position: absolute;
+        top: 32px;
+        left: 0;
+        z-index: 5;
+        span {
+            font-family: "Raleway";
+            font-style: normal;
+            font-weight: 600;
+            font-size: 18px;
+            line-height: 133%;
+            color: #ffffff;
+            margin-left: 8px;
+        }
+    }
+}
+
 .breadcamps {
     margin-bottom: 19px;
+
+    @media (max-width: 768px) {
+        display: none;
+    }
+
     ol {
         display: flex;
         align-items: center;
@@ -155,6 +182,127 @@ $sfd: "SF Pro Display", sans-serif;
                 width: 9px;
                 stroke: #fff;
             }
+        }
+    }
+}
+
+.banner {
+    @include adaptive-value("margin-bottom", 96, 55, 1);
+    position: relative;
+
+    &:before {
+        position: absolute;
+        content: "";
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+        background: linear-gradient(110.99deg, #0165c4 12.66%, #f738fe 81.62%);
+    }
+
+    &#banner-consultation {
+        background-color: #3d3835;
+        background-position: right;
+        background-repeat: no-repeat;
+        background-size: contain;
+
+        &:before {
+            opacity: 0.5;
+        }
+    }
+    &#banner-services {
+        background-repeat: no-repeat;
+        background-size: cover;
+
+        &:before {
+            opacity: 0.8;
+        }
+    }
+    &#banner-singe-services {
+        background-repeat: no-repeat;
+        background-size: cover;
+
+        &:before {
+            opacity: 0.8;
+        }
+    }
+    &#banner-pricing {
+        background-repeat: no-repeat;
+        background-size: cover;
+
+        &:before {
+            opacity: 0.8;
+        }
+    }
+    &#banner-contacts {
+        background-repeat: no-repeat;
+        background-size: cover;
+
+        &:before {
+            opacity: 0.8;
+        }
+    }
+    &#banner-about {
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+
+        &:before {
+            opacity: 0.63;
+        }
+    }
+    &#banner-cases {
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+
+        &:before {
+            opacity: 0.8;
+        }
+    }
+    &#banner-feedback {
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+
+        &:before {
+            opacity: 0.85;
+        }
+    }
+    &#banner-portfolio {
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+
+        &:before {
+            opacity: 0.85;
+        }
+    }
+
+    // .banner__body
+
+    &__body {
+        @include adaptive-value("padding-top", 241, 158, 1);
+        @include adaptive-value("padding-bottom", 58, 37, 1);
+        position: relative;
+        z-index: 1;
+
+        h1 {
+            font-style: normal;
+            font-weight: 900;
+            @include adaptive-value("font-size", 72, 34, 1);
+            line-height: 1.19em;
+            color: #ffffff;
+            margin-bottom: 12px;
+        }
+
+        p {
+            font-style: normal;
+            font-weight: 400;
+            @include adaptive-value("font-size", 22, 17, 1);
+            line-height: 1.64;
+            color: #ffffff;
         }
     }
 }
@@ -246,7 +394,7 @@ $sfd: "SF Pro Display", sans-serif;
             border-radius: 20px;
             flex: 1 1 auto;
             @media (max-width: 768px) {
-                flex: unset;
+                flex: 1 1 100%;
                 @include adaptive-value("margin-bottom", 45, 24, 1);
             }
 
@@ -1076,134 +1224,9 @@ $sfd: "SF Pro Display", sans-serif;
     }
 }
 
-.banner {
-    padding: 241px 0 58px 0;
-    margin-bottom: 96px;
-    position: relative;
-
-    &:before {
-        position: absolute;
-        content: "";
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        z-index: 0;
-        background: linear-gradient(110.99deg, #0165c4 12.66%, #f738fe 81.62%);
-    }
-
-    &#banner-consultation {
-        background-color: #3d3835;
-        background-position: right;
-        background-repeat: no-repeat;
-        background-size: contain;
-
-        &:before {
-            opacity: 0.5;
-        }
-    }
-
-    &#banner-services {
-        background-repeat: no-repeat;
-        background-size: cover;
-
-        &:before {
-            opacity: 0.8;
-        }
-    }
-
-    &#banner-singe-services {
-        background-repeat: no-repeat;
-        background-size: cover;
-
-        &:before {
-            opacity: 0.8;
-        }
-    }
-
-    &#banner-pricing {
-        background-repeat: no-repeat;
-        background-size: cover;
-
-        &:before {
-            opacity: 0.8;
-        }
-    }
-
-    &#banner-contacts {
-        background-repeat: no-repeat;
-        background-size: cover;
-
-        &:before {
-            opacity: 0.8;
-        }
-    }
-
-    &#banner-about {
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center;
-
-        &:before {
-            opacity: 0.63;
-        }
-    }
-
-    &#banner-cases {
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center;
-
-        &:before {
-            opacity: 0.8;
-        }
-    }
-
-    &#banner-feedback {
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center;
-
-        &:before {
-            opacity: 0.85;
-        }
-    }
-    &#banner-portfolio {
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center;
-
-        &:before {
-            opacity: 0.85;
-        }
-    }
-
-    // .banner__body
-
-    &__body {
-        position: relative;
-        z-index: 1;
-        h1 {
-            font-style: normal;
-            font-weight: 900;
-            font-size: 72px;
-            line-height: 1.19em;
-            color: #ffffff;
-            margin-bottom: 12px;
-        }
-
-        p {
-            font-style: normal;
-            font-weight: 400;
-            font-size: 22px;
-            line-height: 1.64;
-            color: #ffffff;
-        }
-    }
-}
-
 .feedback {
-    margin-bottom: 122px;
+    @include adaptive-value("margin-bottom", 120, 80, 1);
+
     // .feedback__body
 
     &__body {
@@ -1212,10 +1235,10 @@ $sfd: "SF Pro Display", sans-serif;
     // .feedback__top
 
     &__top {
-        margin-bottom: 38px;
         display: flex;
         justify-content: space-between;
         align-items: flex-end;
+        @include adaptive-value("margin-bottom", 38, 25, 1);
     }
 
     // .feedback__title
@@ -1228,44 +1251,48 @@ $sfd: "SF Pro Display", sans-serif;
     &__flex {
         display: flex;
         justify-content: space-between;
+
+        @media (max-width: 992px) {
+            flex-direction: column-reverse;
+            justify-content: flex-start;
+        }
     }
 
     // .feedback__slider
 
     &__slider {
-        max-width: 921px;
-        margin-right: 82px;
+        @include adaptive-value("max-width", 857, 200, 1);
+        @include adaptive-value("margin-right", 82, -100, 1);
         position: relative;
+
+        @media (max-width: 992px) {
+            max-width: none !important;
+            margin-right: 0 !important;
+        }
+
         // .feedback__slider-controlls
 
         &-controlls {
             position: absolute;
-            width: calc(100% + 64px);
+
+            @media (min-width: 1361px) {
+                width: calc(100% + 64px);
+            }
+            width: calc(100% + calc(0px + 64 * ((100vw - 375px) / 985)));
+            @media (max-width: 992px) {
+                display: none;
+            }
             left: 50%;
             top: 50%;
-            transform: translate(-50%, -50%);
+            transform: translate(-50%, -75%);
             display: flex;
             align-items: center;
             justify-content: space-between;
-        }
-
-        &-prev,
-        &-next {
-            width: 64px;
-            height: 64px;
-            flex: 0 0 64px;
-            background: linear-gradient(217.3deg, #0165c4 5.7%, #f738fe 93.46%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
+            z-index: 10;
         }
 
         // .feedback__slider-prev
         &-prev {
-            img {
-                transform: rotate(180deg);
-            }
         }
 
         // .feedback__slider-next
@@ -1276,6 +1303,9 @@ $sfd: "SF Pro Display", sans-serif;
         // .feedback__slider-swiper
 
         &-swiper {
+            box-shadow: 0px 4px 40px rgba(247, 56, 254, 0.2);
+            margin-bottom: 30px;
+            border-radius: 20px;
         }
 
         // .feedback__slider-wrapper
@@ -1286,10 +1316,13 @@ $sfd: "SF Pro Display", sans-serif;
         // .feedback__slider-slide
 
         &-slide {
-            box-shadow: 0px 4px 40px rgba(247, 56, 254, 0.2);
+            max-width: 100%;
             border-radius: 20px;
-            padding: 32px 81px;
             background-color: #fff;
+            @include adaptive-value("padding-top", 32, 24, 1);
+            @include adaptive-value("padding-bottom", 32, 26, 1);
+            @include adaptive-value("padding-left", 81, 22, 1);
+            @include adaptive-value("padding-right", 81, 22, 1);
 
             // .feedback__slider-slide-body
 
@@ -1301,17 +1334,29 @@ $sfd: "SF Pro Display", sans-serif;
             &-top {
                 display: flex;
                 align-items: center;
-                margin-bottom: 28px;
+                @include adaptive-value("margin-bottom", 28, 16, 1);
+                @media (max-width: 640px) {
+                    flex-direction: column;
+                }
             }
 
             // .feedback__slider-slide-image
 
             &-image {
-                width: 119px;
-                height: 119px;
+                @include adaptive-value("width", 119, 94, 1);
+                @include adaptive-value("height", 119, 94, 1);
                 border-radius: 50%;
                 border: 4px solid #0165c4;
-                margin-right: 29px;
+                @include adaptive-value("margin-right", 29, 0, 1);
+
+                @media (max-width: 640px) {
+                    margin-right: 0 !important;
+                    margin-bottom: 11px;
+                }
+
+                img {
+                    width: 100%;
+                }
             }
 
             // .feedback__slider-slide-info
@@ -1320,20 +1365,27 @@ $sfd: "SF Pro Display", sans-serif;
                 h6 {
                     font-style: normal;
                     font-weight: 900;
-                    font-size: 24px;
+                    @include adaptive-value("font-size", 24, 20, 1);
                     line-height: 1.33em;
                     color: #0165c4;
                     margin-bottom: 5px;
+
+                    @media (max-width: 640px) {
+                        text-align: center;
+                    }
                 }
 
                 span {
                     font-style: normal;
                     font-weight: 400;
-                    font-size: 18px;
+                    @include adaptive-value("font-size", 18, 16, 1);
                     line-height: 1.44em;
                     color: #828282;
                     max-width: 413px;
                     display: block;
+                    @media (max-width: 640px) {
+                        text-align: center;
+                    }
                 }
             }
 
@@ -1342,7 +1394,7 @@ $sfd: "SF Pro Display", sans-serif;
             &-text {
                 font-style: normal;
                 font-weight: 400;
-                font-size: 18px;
+                @include adaptive-value("font-size", 18, 16, 1);
                 line-height: 1.56;
                 color: #333333;
             }
@@ -1351,7 +1403,6 @@ $sfd: "SF Pro Display", sans-serif;
         // .feedback__slider-pagination
 
         &-pagination {
-            margin-top: 28px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -1376,18 +1427,32 @@ $sfd: "SF Pro Display", sans-serif;
     // .feedback__info
 
     &__info {
-        height: max-content;
-        background: linear-gradient(217.3deg, #0165c4 5.7%, #f738fe 93.46%);
-        box-shadow: 0px 4px 40px rgba(247, 56, 254, 0.2);
-        border-radius: 20px;
-        flex: 0 0 361px;
-        padding: 32px 30px 34px 30px;
+        &-slider {
+            @include adaptive-value("flex-basis", 361, 200, 1);
+            flex-shrink: 0;
+            flex-grow: 0;
+            margin: 0;
+            background: linear-gradient(217.3deg, #0165c4 5.7%, #f738fe 93.46%);
+            box-shadow: 0px 4px 40px rgba(247, 56, 254, 0.2);
+            border-radius: 20px;
+            height: max-content;
+
+            @media (max-width: 992px) {
+                flex: unset;
+                margin-bottom: 32px;
+            }
+        }
+
+        @include adaptive-value("padding-top", 32, 26, 1);
+        @include adaptive-value("padding-bottom", 34, 26, 1);
+        @include adaptive-value("padding-left", 30, 24, 1);
+        @include adaptive-value("padding-right", 30, 24, 1);
 
         p {
-            margin-bottom: 36px;
             font-style: normal;
             font-weight: 900;
-            font-size: 23px;
+            @include adaptive-value("font-size", 23, 21, 1);
+            @include adaptive-value("margin-bottom", 36, 20, 1);
             line-height: 1.39em;
             display: flex;
             align-items: center;
@@ -1395,53 +1460,63 @@ $sfd: "SF Pro Display", sans-serif;
         }
 
         h6 {
-            margin-bottom: 8px;
+            @include adaptive-value("margin-bottom", 8, 6, 1);
+            @include adaptive-value("font-size", 20, 18, 1);
             font-style: normal;
             font-weight: 600;
-            font-size: 20px;
             line-height: 1.3em;
             color: #ffffff;
         }
+
         span {
             font-style: normal;
             font-weight: 400;
-            font-size: 18px;
+            @include adaptive-value("font-size", 18, 16, 1);
             line-height: 1.33em;
             color: #ffffff;
         }
     }
 }
 
-.servises__about {
-    margin-bottom: 153px;
-    // .servises__about-body
+.services__about {
+    overflow: unset !important;
+    @include adaptive-value("margin-bottom", 153, 73, 1);
+
+    // .services__about-body
 
     &-body {
         position: relative;
     }
 
-    // .servises__about-title
+    // .services__about-title
 
     &-title {
-        margin-bottom: 31px;
+        @include adaptive-value("margin-bottom", 31, 15, 1);
     }
 
-    // .servises__about-descr
+    // .services__about-descr
 
     &-descr {
         font-style: normal;
         font-weight: 400;
-        font-size: 20px;
+        @include adaptive-value("font-size", 20, 16, 1);
         line-height: 1.6em;
         color: #333333;
         max-width: 555px;
+
+        @media (max-width: 640px) {
+            max-width: none;
+        }
     }
 
     img {
         position: absolute;
         right: 0;
-        top: 50%;
-        transform: translate(0, -50%);
+        // top: 50%;
+        // transform: translate(0, -50%);
+        @include adaptive-value("width", 624, 257, 1);
+        @include adaptive-value("bottom", -20, -58, 1);
+        z-index: -1;
     }
 }
 
@@ -1457,3 +1532,9 @@ $sfd: "SF Pro Display", sans-serif;
 @import "cases_page";
 @import "comments_page";
 @import "portfolio_page";
+
+.swiper-slide {
+    height: auto;
+}
+
+//todo    pricing.html consult.html  - двухрадовые слайдеры

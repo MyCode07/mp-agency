@@ -1,24 +1,28 @@
 @@include('html/head.html',{'title':'Стоимость услуг'})
 @@include('html/header.html')
-    <main class="page">
-        @@include('html/banner.html',{
-        'title':'Стоимость услуг',
-        'pagetitle':'Стоимость услуг',
-        'pagebannerid':'banner-pricing',
-        'pagedescription':'Благодаря честному отношению к клиентам и привлечению лучших <br> специалистов мы стали одним из лидеров рынка.'
-        })
-        <section class="servises__pricing">
-            <div class="container">
-                <div class="servises__pricing-body">
-                    <h2 class="servises__pricing-title _section-title">Стоимость наших услуг</h2>
+<main class="page">
+    @@include('html/banner.html',{
+    'title':'Стоимость услуг',
+    'pagetitle':'Стоимость услуг',
+    'pagebannerid':'banner-pricing',
+    'pagedescription':'Благодаря честному отношению к клиентам и привлечению лучших <br> специалистов мы стали одним из лидеров рынка.'
+    })
+    <section class="services__pricing">
+        <div class="container">
+            <div class="services__pricing-body">
+                <h2 class="services__pricing-title _section-title">Стоимость наших услуг</h2>
+                <div class="products-swiper">
                     @@include('html/products_grid.html')
                 </div>
+                <div class="products-pagination _slider-pagination"></div>
             </div>
-        </section>
-        <section class="service-single__pricing">
-            <div class="container">
-                <div class="service-single__pricing-body1">
-                    <h2 class="service-single__pricing-title _section-title">Стоимость отдельных услуг</h2>
+        </div>
+    </section>
+    <section class="service-single__pricing">
+        <div class="container">
+            <div class="service-single__pricing-body1">
+                <h2 class="service-single__pricing-title _section-title">Стоимость отдельных услуг</h2>
+                <div class="service-single__pricing-swiper">
                     <div class="service-single__pricing-grid">
                         <article class="service-single__product">
                             <div class="service-single__product-body">
@@ -82,8 +86,10 @@
                         </article>
                     </div>
                 </div>
+                <div class="service-single__pricing-pagination _slider-pagination"></div>
             </div>
-        </section>
-        @@include('html/feedback.html')
-    </main>
+        </div>
+    </section>
+    @@include('html/feedback.html')
+</main>
 @@include('html/footer.html')

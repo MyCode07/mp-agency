@@ -9,11 +9,11 @@
     })
     @@include('html/advantages.html')
     @@include('html/customers.html')
-    <section class="servises__about">
+    <section class="services__about">
         <div class="container">
-            <div class="servises__about-body">
-                <h2 class="servises__about-title _section-title">Об услугах</h2>
-                <p class="servises__about-descr">Мы проводим, как сегментный, так и полный спектр услуг по
+            <div class="services__about-body">
+                <h2 class="services__about-title _section-title">Об услугах</h2>
+                <p class="services__about-descr">Мы проводим, как сегментный, так и полный спектр услуг по
                     продвижению на маркетплейсах Wildberries и OZON. Создаем
                     кликбейтную инфографику и проводим SEO-оптимизацию ваших карточек. <br><br>
                     Кроме того, мы анализируем вашу товарную матрицу и проводим консультацию по оптимальным
@@ -23,70 +23,175 @@
             </div>
         </div>
     </section>
-    <section class="servises__pricing">
+    <section class="services__pricing">
         <div class="container">
-            <div class="servises__pricing-body">
-                <h2 class="servises__pricing-title _section-title">Стоимость наших услуг</h2>
-                @@include('html/products_grid.html')
+            <div class="services__pricing-body">
+                <h2 class="services__pricing-title _section-title ">Стоимость наших услуг</h2>
+                <div class="products-swiper">
+                    @@include('html/products_grid.html')
+                </div>
+                <div class="products-pagination _slider-pagination"></div>
             </div>
         </div>
     </section>
-    <section class="servises__results">
+    <section class="services__results">
         <div class="container">
-            <div class="servises__results-body">
-                <div class="servises__results-top">
-                    <h2 class="servises__results-title _section-title">Результаты наших клиентов</h2>
-                    <a href="" class="_section-more">Посмотреть все кейсы</a>
+            <div class="services__results-body">
+                <div class="services__results-top">
+                    <h2 class="services__results-title _section-title">Результаты наших клиентов</h2>
+                    <a href="cases.html" class="_section-more">Посмотреть все кейсы</a>
                 </div>
-                <div class="servises__results-content">
-                    <div class="servises__results-content-top">
-                        <div class="servises__results-top-content">
-                            <h3>Продажи товаров для рукоделия</h3>
-                            <span>Павел Вертинский</span>
-                            <p>Задача: SEO-оптимизация карточек товаров. Хорошо <br> оптимизированная карточка
-                                повысит конверсию <br> в продажу и увеличит
-                                средний чек покупки.</p>
-                        </div>
-                        <div class="servises__results-top-results results">
-                            <div class="results__past">
-                                <span class="results__past-top">БЫЛО</span>
-                                <div class="results__past-bottom">
-                                    <p>
-                                        <label>51</label>
-                                        <span>продажа</span>
-                                    </p>
-                                    <p>
-                                        <label>1126</label>
-                                        <span>визитов</span>
-                                    </p>
+                <div class="services__results-swiper">
+                    <div class="services__results-wrapper">
+                        <div class="services__results-content">
+                            <div class="services__results-content-top">
+                                <div class="services__results-top-content">
+                                    <h3>Продажи товаров для рукоделия</h3>
+                                    <span>Павел Вертинский</span>
+                                    <p>Задача: SEO-оптимизация карточек товаров. Хорошо оптимизированная карточка
+                                        повысит конверсию в продажу и увеличит
+                                        средний чек покупки.</p>
+                                </div>
+                                <div class="services__results-top-results results">
+                                    <div class="results__past">
+                                        <span class="results__past-top">БЫЛО</span>
+                                        <div class="results__past-bottom">
+                                            <p>
+                                                <label>51</label>
+                                                <span>продажа</span>
+                                            </p>
+                                            <p>
+                                                <label>1126</label>
+                                                <span>визитов</span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="results__present">
+                                        <span class="results__present-top">СТАЛО</span>
+                                        <div class="results__present-bottom">
+                                            <p>
+                                                <label>78</label>
+                                                <span>продаж</span>
+                                            </p>
+                                            <p>
+                                                <label>4525</label>
+                                                <span>визитов</span>
+                                            </p>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="results__present">
-                                <span class="results__present-top">СТАЛО</span>
-                                <div class="results__present-bottom">
-                                    <p>
-                                        <label>78</label>
-                                        <span>продаж</span>
-                                    </p>
-                                    <p>
-                                        <label>4525</label>
-                                        <span>визитов</span>
-                                    </p>
+                            <div class="results__grafic-tabs">
+                                <button class="gradient-box _active">Визиты</button>
+                                <button class="gradient-box">Заявки</button>
+                            </div>
+                            <div class="services__results-bottom results__grafic">
+                                <div class="results__grafic-visits results__grafic-tab-content _active">
+                                    <span>Количество визитов из поисковых систем</span>
+                                    <img src="img/services-page/01.png" alt="">
+                                    <div class="results__grafic-statistic">
+                                        <p>
+                                            <label>1126</label>
+                                            <span>визитов</span>
+                                        </p>
+                                        <p>
+                                            <label>4525</label>
+                                            <span>визитов</span>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="results__grafic-orders results__grafic-tab-content">
+                                    <span>Количество заявок</span>
+                                    <img src="img/services-page/01.png" alt="">
+                                    <div class="results__grafic-statistic">
+                                        <p>
+                                            <label>51</label>
+                                            <span>продаж</span>
+                                        </p>
+                                        <p>
+                                            <label>78</label>
+                                            <span>продаж</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="services__results-content">
+                            <div class="services__results-content-top">
+                                <div class="services__results-top-content">
+                                    <h3>Продажи товаров для рукоделия</h3>
+                                    <span>Павел Вертинский</span>
+                                    <p>Задача: SEO-оптимизация карточек товаров. Хорошо оптимизированная карточка
+                                        повысит конверсию в продажу и увеличит
+                                        средний чек покупки.</p>
+                                </div>
+                                <div class="services__results-top-results results">
+                                    <div class="results__past">
+                                        <span class="results__past-top">БЫЛО</span>
+                                        <div class="results__past-bottom">
+                                            <p>
+                                                <label>51</label>
+                                                <span>продажа</span>
+                                            </p>
+                                            <p>
+                                                <label>1126</label>
+                                                <span>визитов</span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="results__present">
+                                        <span class="results__present-top">СТАЛО</span>
+                                        <div class="results__present-bottom">
+                                            <p>
+                                                <label>78</label>
+                                                <span>продаж</span>
+                                            </p>
+                                            <p>
+                                                <label>4525</label>
+                                                <span>визитов</span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="results__grafic-tabs">
+                                <button class="gradient-box _active">Визиты</button>
+                                <button class="gradient-box">Заявки</button>
+                            </div>
+                            <div class="services__results-bottom results__grafic">
+                                <div class="results__grafic-visits _active">
+                                    <span>Количество визитов из поисковых систем</span>
+                                    <img src="img/services-page/01.png" alt="">
+                                    <div class="results__grafic-statistic">
+                                        <p>
+                                            <label>1126</label>
+                                            <span>визитов</span>
+                                        </p>
+                                        <p>
+                                            <label>4525</label>
+                                            <span>визитов</span>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="results__grafic-orders">
+                                    <span>Количество заявок</span>
+                                    <img src="img/services-page/01.png" alt="">
+                                    <div class="results__grafic-statistic">
+                                        <p>
+                                            <label>51</label>
+                                            <span>продаж</span>
+                                        </p>
+                                        <p>
+                                            <label>78</label>
+                                            <span>продаж</span>
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="servises__results-bottom results__grafic">
-                        <div class="results__grafic-past">
-                            <!-- <span>Количество визитов из поисковых систем</span> -->
-                            <img src="img/services-page/01.png" alt="">
-                        </div>
-                        <div class="results__grafic-present">
-                            <!-- <span>Количество заявок</span> -->
-                            <img src="img/services-page/01.png" alt="">
-                        </div>
-                    </div>
                 </div>
+                <div class="services__results-pagination _slider-pagination"></div>
             </div>
         </div>
     </section>
