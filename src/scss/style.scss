@@ -18,6 +18,10 @@ section {
     overflow: hidden;
 }
 
+.swiper-slide {
+    height: auto;
+}
+
 $gilyor: "Gilroy", sans-serif;
 $sfd: "SF Pro Display", sans-serif;
 
@@ -189,7 +193,15 @@ $sfd: "SF Pro Display", sans-serif;
 .banner {
     @include adaptive-value("margin-bottom", 96, 55, 1);
     position: relative;
+    min-height: 100vh;
 
+    @media (max-height: 675px) {
+        min-height: unset;
+    }
+
+    @media (max-width: 992px) {
+        min-height: unset;
+    }
     &:before {
         position: absolute;
         content: "";
@@ -209,6 +221,12 @@ $sfd: "SF Pro Display", sans-serif;
 
         &:before {
             opacity: 0.5;
+            z-index: 1;
+        }
+
+        @media (max-width: 992px) {
+            background-size: cover;
+            background-position-x: center;
         }
     }
     &#banner-services {
@@ -243,7 +261,8 @@ $sfd: "SF Pro Display", sans-serif;
             opacity: 0.8;
         }
     }
-    &#banner-about {
+    &#banner-about,
+    &#banner-faq {
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
@@ -303,6 +322,11 @@ $sfd: "SF Pro Display", sans-serif;
             @include adaptive-value("font-size", 22, 17, 1);
             line-height: 1.64;
             color: #ffffff;
+            max-width: 700px;
+
+            @media (max-width: 700px) {
+                max-width: none;
+            }
         }
     }
 }
@@ -373,7 +397,10 @@ $sfd: "SF Pro Display", sans-serif;
         &-item {
             margin-right: 15px;
             margin-left: 15px;
-            @include adaptive-value("margin-bottom", 48, 20, 1);
+            margin-bottom: 3vh;
+            @media (max-width: 1200px) {
+                @include adaptive-value("margin-bottom", 48, 20, 1);
+            }
             @media (max-width: 768px) {
                 margin: 0;
                 width: 100%;
@@ -384,8 +411,8 @@ $sfd: "SF Pro Display", sans-serif;
         // .advantages__flex-contetent
 
         &-contetent {
-            @include adaptive-value("padding-top", 40, 24, 1);
-            @include adaptive-value("padding-bottom", 40, 26, 1);
+            @include adaptive-value("padding-top", 25, 15, 1);
+            @include adaptive-value("padding-bottom", 25, 15, 1);
             @include adaptive-value("padding-right", 32, 24, 1);
             @include adaptive-value("padding-left", 32, 24, 1);
 
@@ -417,14 +444,14 @@ $sfd: "SF Pro Display", sans-serif;
                 justify-content: flex-start;
                 margin-bottom: 20px;
                 img {
-                    @include adaptive-value("width", 72, 48, 1);
+                    @include adaptive-value("width", 57, 40, 1);
                     margin-right: 20px;
                 }
 
                 span {
                     font-style: normal;
                     font-weight: 700;
-                    @include adaptive-value("font-size", 22, 20, 1);
+                    @include adaptive-value("font-size", 20, 20, 1);
                     line-height: 1.27em;
                     color: #0165c4;
                 }
@@ -455,17 +482,15 @@ $sfd: "SF Pro Display", sans-serif;
             flex-shrink: 0;
             @include adaptive-value("flex-basis", 302, 250, 1);
             padding: 0 10px;
-
-            min-height: 256px;
-
             @media (max-width: 768px) {
                 flex: unset;
+                min-height: 148px;
             }
 
             span {
                 font-style: normal;
                 font-weight: 900;
-                @include adaptive-value("font-size", 64, 36, 1);
+                @include adaptive-value("font-size", 54, 30, 1);
                 line-height: 1.25em;
                 text-align: center;
                 color: #ffffff;
@@ -703,9 +728,13 @@ $sfd: "SF Pro Display", sans-serif;
         // .videoblog__slider-slide
 
         &-slide {
-            iframe {
+            display: block;
+            width: 100%;
+            @include adaptive-value("min-height", 608, 192, 1);
+
+            img {
+                height: 100%;
                 width: 100%;
-                @include adaptive-value("min-height", 608, 192, 1);
             }
         }
 
@@ -752,7 +781,7 @@ $sfd: "SF Pro Display", sans-serif;
     // .faq__title
 
     &__title {
-        margin-bottom: 46px;
+        @include adaptive-value("margin-bottom", 46, 25, 1);
     }
 
     // .faq__column
@@ -797,7 +826,6 @@ $sfd: "SF Pro Display", sans-serif;
 
                         @media (max-width: 540px) {
                             font-weight: 900;
-                            font-size: 19px !important;
                         }
                     }
                 }
@@ -811,11 +839,13 @@ $sfd: "SF Pro Display", sans-serif;
             align-items: center;
             justify-content: space-between;
             cursor: pointer;
-
+            @media (max-width: 768px) {
+                align-items: flex-start;
+            }
             span {
                 font-style: normal;
                 font-weight: 600;
-                @include adaptive-value("font-size", 22, 18, 1);
+                @include adaptive-value("font-size", 22, 16, 1);
                 line-height: 1.27em;
                 color: #0165c4;
             }
@@ -828,8 +858,10 @@ $sfd: "SF Pro Display", sans-serif;
 
             img {
                 margin-left: 15px;
-                @media (max-width: 540px) {
-                    display: none;
+                @media (max-width: 768px) {
+                    margin-top: 3px;
+                    width: 16px;
+                    margin-left: 10px;
                 }
             }
         }
@@ -1520,6 +1552,33 @@ $sfd: "SF Pro Display", sans-serif;
     }
 }
 
+._scrolldown {
+    display: block;
+    height: fit-content;
+    margin-top: 10vh;
+    transition: all 0.3s ease 0s;
+    padding: 10px 0px;
+    border: 1px solid #fff;
+    border-radius: 20%;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    @media (max-width: 992px) {
+        display: none;
+    }
+
+    @media (any-hover: hover) {
+        &:hover {
+            transform: translate(0, 10px);
+            box-shadow: 0 -10px 4px 0px #fff;
+        }
+    }
+    svg {
+        transform: rotate(-90deg);
+        transition: all 0.3s ease 0s;
+    }
+}
+
 @import "header";
 @import "footer";
 @import "product";
@@ -1533,8 +1592,99 @@ $sfd: "SF Pro Display", sans-serif;
 @import "comments_page";
 @import "portfolio_page";
 
-.swiper-slide {
-    height: auto;
-}
+.form__popup {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: scale(0);
+    opacity: 0;
+    transition: all 0.3s ease 0s;
+    padding: 0 10px;
+    &._open {
+        transform: scale(1);
+        opacity: 1;
+    }
 
-//todo    pricing.html consult.html  - двухрадовые слайдеры
+    // .form__popup-overlay
+
+    &-overlay {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        z-index: 0;
+        background-color: rgba(0, 0, 0, 0.6);
+        cursor: pointer;
+    }
+
+    // .form__popup-body
+
+    &-body {
+        overflow-y: auto;
+        width: 100%;
+        height: 100%;
+        padding: 50px 0;
+
+        &::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        &::-webkit-scrollbar-track {
+            background-color: rgb(199, 199, 199);
+            border-radius: 100px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            box-shadow: inset 2px 2px 5px 0 #6353db;
+            background: linear-gradient(110.99deg, #0165c4 12.66%, #f738fe 81.62%);
+        }
+    }
+
+    // .form__popup-content
+
+    &-content {
+        max-width: 635px;
+        position: relative;
+        margin: 0 auto;
+        z-index: 1;
+    }
+
+    // .form__popup-close
+
+    &-close {
+        position: absolute;
+        right: 24px;
+        top: 24px;
+
+        @media (any-hover: hover) {
+            &:hover {
+                img,
+                svg {
+                    transform: rotate(180deg);
+                }
+            }
+        }
+
+        img,
+        svg {
+            pointer-events: none;
+            transition: all 0.3s ease 0s;
+        }
+    }
+
+    .about__form {
+        position: relative;
+        margin: 0 !important;
+        border-radius: 30px !important;
+        @media (max-width: 768px) {
+            border-radius: 20px !important;
+        }
+    }
+}

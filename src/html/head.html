@@ -14,6 +14,10 @@
             font-family: 'Raleway', sans-serif;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         .home {
             background-image: url('img/main-top-bgi.png');
             background-repeat: no-repeat;
@@ -30,6 +34,12 @@
 
         #banner-consultation {
             background-image: url('img/consulting-page/banner_consulation.png');
+        }
+
+        @media (max-width:640px) {
+            #banner-consultation {
+                background-image: url('img/consulting-page/banner_consulation-mobile.png');
+            }
         }
 
         #banner-contacts {
@@ -59,12 +69,20 @@
         #banner-portfolio {
             background-image: url('img/portfolio-page/banner_portfolio.png');
         }
+
+        #banner-faq{
+            background-image: url('img/about-page/banner_about.png');
+        }
+
         .mobile-menu {
             background-image: url('img/mobile_menu.png');
         }
     </style>
 
-    <link rel="stylesheet" href="files/swiper.min.css">
+    <!-- <link rel="stylesheet" href="files/swiper.min.css"> -->
+    <link rel="stylesheet" href="files/new-swiper.min.css">
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" /> -->
+
     <link rel="stylesheet" href="css/style.min.css">
 
 </head>

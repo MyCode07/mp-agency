@@ -25,6 +25,19 @@ document.addEventListener('click', function (e) {
             faqtitle.classList.remove('_active')
         }
     }
+
+    if (targetEl.classList.contains('_open-popup-form')) {
+        document.querySelector('.form__popup').classList.add('_open');
+    }
+
+    if (targetEl.classList.contains('form__popup-close')) {
+        document.querySelector('.form__popup').classList.remove('_open');
+    }
+
+    if (targetEl.classList.contains('form__popup-overlay')) {
+        document.querySelector('.form__popup').classList.remove('_open');
+    }
+
 })
 
 

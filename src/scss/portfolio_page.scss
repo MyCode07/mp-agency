@@ -38,11 +38,15 @@
 
         &-item {
             @include adaptive-value("flex-basis", 303, 178, 1);
-
             @media (max-width: 768px) {
                 flex: unset !important;
             }
-
+            overflow: hidden;
+            position: relative;
+            img {
+                width: 100%;
+                height: 100%;
+            }
             flex-grow: 0;
             flex-shrink: 0;
             margin-bottom: 32px;

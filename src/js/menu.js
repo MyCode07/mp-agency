@@ -22,3 +22,20 @@ if (burger) {
         }
     })
 }
+
+
+
+const headerLinks = document.querySelectorAll('.header__menu-item');
+
+for (let i = 0; i < headerLinks.length; i++) {
+    const link = headerLinks[i]
+    const arrow = link.querySelector('svg');
+    if (arrow) {
+        arrow.addEventListener('click', () => {
+            arrow.closest('.header__menu-item').classList.toggle('_active');
+        })
+        link.addEventListener('mouseleave', () => {
+            arrow.closest('.header__menu-item').classList.remove('_active');
+        })
+    }
+}

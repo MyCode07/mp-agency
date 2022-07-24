@@ -2,6 +2,15 @@
     position: relative;
     @include adaptive-value("margin-bottom", 98, 87, 1);
     overflow: unset !important;
+    min-height: 100vh;
+
+    @media (max-height:675px){
+        min-height: unset;
+    }
+
+    @media (max-width:992px){
+        min-height: unset;
+    }
 
     &:before {
         position: absolute;

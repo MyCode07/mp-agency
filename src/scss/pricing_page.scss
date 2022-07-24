@@ -31,12 +31,9 @@
 
     &-swiper {
         @media (max-width: 768px) {
-            margin-bottom: 30px;
+            margin-bottom: 6px;
             margin-top: -30px;
             padding-top: 30px;
-        }
-
-        @media (max-width: 500px) {
             margin-left: -20px;
             margin-right: -20px;
         }
@@ -64,15 +61,14 @@
     @include adaptive-value("max-width", 413, 315, 1);
 
     @media (max-width: 768px) {
-        margin: 0 25px !important;
+        margin: 0 20px 24px 20px !important;
         max-width: 413px !important;
     }
 
-    @media (max-width: 500px) {
+    @media (max-width: 450px) {
+        width: calc(100vw - 40px) !important;
         max-width: none;
-        width: calc(100% - 40px);
     }
-
     // .service-single__product-body
 
     &-body {
