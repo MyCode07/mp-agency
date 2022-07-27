@@ -23,19 +23,28 @@ if (burger) {
     })
 }
 
-
-
-const headerLinks = document.querySelectorAll('.header__menu-item');
+const svg = `
+    <svg viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0.5 0.75L5 5.25L9.5 0.75" stroke-linecap="round" stroke-linejoin="round"></path>
+    </svg>
+`;
+const headerLinks = document.querySelectorAll('.header__menu li');
 
 for (let i = 0; i < headerLinks.length; i++) {
-    const link = headerLinks[i]
+    const link = headerLinks[i];
+
+    const submenu = link.querySelector('ul');
+    if (submenu) {
+        submenu.insertAdjacentHTML('beforebegin',svg);
+    }
     const arrow = link.querySelector('svg');
     if (arrow) {
         arrow.addEventListener('click', () => {
-            arrow.closest('.header__menu-item').classList.toggle('_active');
+            arrow.closest('li').classList.toggle('_active');
         })
         link.addEventListener('mouseleave', () => {
-            arrow.closest('.header__menu-item').classList.remove('_active');
+            arrow.closest('li').classList.remove('_active');
         })
     }
 }
+

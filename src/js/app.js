@@ -2,15 +2,7 @@
 document.addEventListener('click', function (e) {
     let targetEl = e.target;
     if (targetEl.classList.contains('item-nav')) {
-        if (!targetEl.classList.contains('_active')) {
-            document.querySelectorAll('.item-nav').forEach(item => {
-                item.classList.remove('_active')
-            });
-            targetEl.classList.add('_active')
-        }
-        else {
-            targetEl.classList.remove('_active')
-        }
+        loadServiceInfo(targetEl);
     }
 
     if (targetEl.classList.contains('faq__column-question')) {
@@ -40,6 +32,30 @@ document.addEventListener('click', function (e) {
 
 })
 
+function loadServiceInfo(targetEl) {
+    let info = targetEl.querySelector('.item-nav__descr-body');
+    const aboutBlock = document.querySelector('.home__services-about');
+    if (info) {
+        const cloneInfo = info.cloneNode(true);
+        if (!targetEl.classList.contains('_active')) {
+            document.querySelectorAll('.item-nav').forEach(item => {
+                item.classList.remove('_active')
+            });
+            targetEl.classList.add('_active')
+            if (aboutBlock.querySelector('.item-nav__descr-body')) {
+                aboutBlock.querySelector('.item-nav__descr-body').remove();
+            }
+            aboutBlock.append(cloneInfo);
+        }
+        else {
+            targetEl.classList.remove('_active')
+        }
+    }
+}
+const firstServiceInfo = document.querySelectorAll('.item-nav')[0];
+if (firstServiceInfo) {
+    loadServiceInfo(firstServiceInfo);
+}
 
 document.addEventListener('DOMContentLoaded', function (e) {
     let privacy = document.querySelector('.footer__privacy');
@@ -78,8 +94,3 @@ document.addEventListener('DOMContentLoaded', function (e) {
 
 import "./menu.js";
 import "./sliders.js";
-// import "./input-mask.js";
-// import "./input-validate.js";
-
-
-

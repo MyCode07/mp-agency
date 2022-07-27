@@ -50,30 +50,30 @@
 
         // .header__menu-item
 
-        &-item {
+        &-item,li {
             position: relative;
 
             &._active {
-                .header__submenu {
+                .header__submenu,.sub-menu {
                     max-height: 400px;
                 }
                 svg {
                     transform: translate(0, -50%) rotate(180deg);
                 }
-                .header__menu-link {
+                .header__menu-link,a {
                     color: #0165c4;
                 }
             }
 
             @media (any-hover: hover) {
                 &:hover {
-                    .header__submenu {
+                    .header__submenu,.sub-menu {
                         max-height: 400px;
                     }
                     svg {
                         transform: translate(0, -50%) rotate(180deg);
                     }
-                    .header__menu-link {
+                    .header__menu-link,a {
                         color: #0165c4;
                     }
                 }
@@ -99,7 +99,7 @@
 
         // .header__menu-link
 
-        &-link {
+        &-link,a {
             font-style: normal;
             font-weight: 400;
             @include adaptive-value("font-size", 18, 16, 1);
@@ -124,7 +124,7 @@
 
     // .header__submenu
 
-    &__submenu {
+    &__submenu,.sub-menu {
         position: absolute;
         max-height: 0;
         transition: all 0.3s linear 0s;
@@ -143,7 +143,7 @@
 
         // .header__submenu-item
 
-        &-item {
+        &-item,li {
             padding: 5px 15px;
             background-color: #fff;
             transition: all 0.3s ease 0s;
@@ -161,7 +161,7 @@
 
         // .header__submenu-link
 
-        &-link {
+        &-link,a {
             font-style: normal;
             font-weight: 400;
             @include adaptive-value("font-size", 18, 16, 1);
