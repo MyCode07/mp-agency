@@ -20,7 +20,17 @@ document.addEventListener('click', function (e) {
 
     if (targetEl.classList.contains('_open-popup-form')) {
         document.querySelector('.form__popup').classList.add('_open');
+        const data = targetEl.dataset.button;
+        const input = document.querySelector('.popup-hidden-input');
+        if (input) {
+            input.value = data;
+        }
+        else {
+            input.value = 'Бесплатная консультация'
+        }
     }
+
+
 
     if (targetEl.classList.contains('form__popup-close')) {
         document.querySelector('.form__popup').classList.remove('_open');
@@ -90,7 +100,20 @@ document.addEventListener('DOMContentLoaded', function (e) {
             };
         })
     }
+
+    if (document.querySelector("input[name='your_phone']")) {
+        $("input[name='your_phone']").inputmask("+7(999)-999-99-99");
+    }
+
+    const about = document.querySelector('.about');
+    if (about) {
+        const input = about.querySelector('.popup-hidden-input');
+        input.value=document.querySelector('.banner h1').textContent;
+    }
+
 })
+
+
 
 import "./menu.js";
 import "./sliders.js";

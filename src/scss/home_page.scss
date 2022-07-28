@@ -4,6 +4,9 @@
     overflow: unset !important;
     min-height: 100vh;
 
+    background-size: cover;
+    background-repeat: no-repeat;
+
     @media (max-height: 675px) {
         min-height: unset;
     }

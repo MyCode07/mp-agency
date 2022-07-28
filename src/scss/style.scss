@@ -735,6 +735,7 @@ $sfd: "SF Pro Display", sans-serif;
             img {
                 height: 100%;
                 width: 100%;
+                object-fit: cover;
             }
         }
 
@@ -1050,10 +1051,6 @@ $sfd: "SF Pro Display", sans-serif;
         }
     }
 
-    input:not(:last-child) {
-        @include adaptive-value("margin-bottom", 32, 24, 1);
-    }
-
     // .form__title
 
     &__title {
@@ -1080,7 +1077,16 @@ $sfd: "SF Pro Display", sans-serif;
         color: #ffffff;
     }
 
-    button {
+    span {
+        display: block;
+    }
+
+    .wpcf7-form-control-wrap:not(:last-child) {
+        @include adaptive-value("margin-bottom", 15, 5, 1);
+    }
+
+    button,
+    input[type="submit"] {
         margin-left: auto;
         margin-right: auto;
         background: linear-gradient(110.99deg, #005cb3 12.66%, #c12ac7 81.62%);
@@ -1096,6 +1102,7 @@ $sfd: "SF Pro Display", sans-serif;
         @include adaptive-value("padding-bottom", 22, 16, 1);
         display: block;
         @include adaptive-value("margin-top", 56, 40, 1);
+        cursor: pointer;
     }
     a {
         display: block;
@@ -1176,20 +1183,23 @@ $sfd: "SF Pro Display", sans-serif;
             @include adaptive-value("margin-top", 50, 24, 1);
         }
 
+        //   <img src="<?php bloginfo( 'template_url' ) ?>/assets/img/svg/email_arrow.svg" alt="">
+
         form {
             @include adaptive-value("width", 474, 200, 1);
+            position: relative;
 
             display: flex;
             align-items: center;
             justify-content: flex-start;
             background-color: #ffffff;
             border-radius: 10px;
-            padding: 12px 12px 12px 30px;
+            padding: 12px 12px 12px 30px !important;
 
             @media (max-width: 768px) {
                 width: 100%;
                 background-color: unset;
-                padding: 0;
+                padding: 0 !important;
                 flex-direction: column;
             }
         }
@@ -1244,7 +1254,7 @@ $sfd: "SF Pro Display", sans-serif;
                 }
             }
         }
-        span {
+        &-privacy {
             margin-top: 13px;
             font-style: normal;
             font-weight: 400;
@@ -1252,6 +1262,64 @@ $sfd: "SF Pro Display", sans-serif;
             color: #ffffff;
             @include adaptive-value("font-size", 18, 16, 1);
             text-align: center;
+        }
+    }
+
+    #mailpoet_form_1 .mailpoet_paragraph {
+        margin-bottom: 0;
+    }
+
+    .mailpoet_paragraph {
+        width: 100%;
+    }
+
+    .mailpoet_submit {
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translate(0, -50%);
+        width: 40px !important;
+        height: 40px !important;
+        border-radius: 50%;
+        background-color: #000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0;
+        background-image: url('../img/svg/email_arrow.svg');
+        cursor: pointer;
+        background-repeat: no-repeat;
+        background-position: center;
+
+        font-style: normal !important;
+        font-weight: 700 !important;
+        line-height: 1.5 !important;
+        color: #ffffff !important;
+
+        @media (max-width: 768px) {
+            position: static;
+            height: auto !important;
+            width: 217px !important;
+            padding: 12px 0 !important;
+            border-radius: 100px !important;
+            box-shadow: 0px 0px 30px rgba(255, 255, 255, 0.3);
+            background-color: #000;
+            background-image: unset;
+            font-size: 16px;
+            display: block;
+            margin-left: auto !important;
+            margin-right: auto !important;
+        }
+
+    }
+
+    @media (max-width:768px){
+        .mailpoet_text{
+            background-color: #ffffff !important;
+            border-radius: 10px !important;
+            padding: 16px 20px 16px 20px !important;
+            margin-bottom: 48px !important;
+            display: block;
         }
     }
 }
@@ -1686,5 +1754,25 @@ $sfd: "SF Pro Display", sans-serif;
         @media (max-width: 768px) {
             border-radius: 20px !important;
         }
+    }
+}
+
+.popup-hidden-input {
+    visibility: hidden;
+    position: absolute;
+    opacity: 0;
+    height: 0;
+}
+
+.heading-404{
+    font-weight: 900;
+    @include adaptive-value('font-size', 90, 36, 1);
+    text-align: center;
+    line-height: 1.2em;
+    color: #333333;
+    @include adaptive-value('padding-top',90, 45, 1);
+
+    span{
+        font-size: 0.5em;
     }
 }
