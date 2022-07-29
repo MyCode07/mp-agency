@@ -102,7 +102,7 @@
             flex: 1 1 100%;
         }
 
-        button {
+        &-btn {
             width: 222px;
             margin-bottom: 22px;
 
@@ -184,11 +184,43 @@
         line-height: 1.56em;
         color: #ffffff;
 
-        @media (max-width:560px){
+        @media (max-width: 560px) {
             text-align: center;
             margin-top: 62px;
             display: block;
             width: 100%;
         }
+    }
+}
+
+.to-top {
+    position: fixed;
+    @include adaptive-value("width", 80, 40, 1);
+    @include adaptive-value("height", 80, 40, 1);
+    @include adaptive-value("right", 40, 15, 1);
+    @include adaptive-value("bottom", 40, 15, 1);
+    z-index: 99;
+    visibility: hidden;
+    pointer-events: none;
+    opacity: 0;
+    transition: all 0.3s ease 0s;
+
+    &._active {
+        visibility: visible;
+        opacity: 1;
+        pointer-events: all;
+    }
+
+    border-radius: 50%;
+    background: linear-gradient(110.99deg, #0165c4 12.66%, #f738fe 81.62%);
+    box-shadow: 0px 0px 12px 6px rgba(0, 0, 0, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+        width: 75%;
+        transform: rotate(-90deg);
+        pointer-events: none;
     }
 }

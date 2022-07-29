@@ -1607,6 +1607,10 @@ $sfd: "SF Pro Display", sans-serif;
         @media (max-width: 640px) {
             max-width: none;
         }
+
+        &._nomaxwidth{
+            max-width: none !important;
+        }
     }
 
     img {

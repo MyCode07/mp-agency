@@ -388,6 +388,12 @@
         &-image {
             @include adaptive-value("margin-bottom", 20, 22, 1);
             display: block;
+
+            img{
+                width: 100%;
+                max-height: 208px;
+                object-fit: cover;
+            }
         }
 
         // .owrblog__item-content

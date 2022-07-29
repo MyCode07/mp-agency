@@ -29,22 +29,27 @@ const svg = `
     </svg>
 `;
 const headerLinks = document.querySelectorAll('.header__menu li');
+const menuMenuLinks = document.querySelectorAll('.mobile-menu__menu li');
 
-for (let i = 0; i < headerLinks.length; i++) {
-    const link = headerLinks[i];
+function addSvgToMenuItem(menuitem) {
+    for (let i = 0; i < menuitem.length; i++) {
+        const link = menuitem[i];
 
-    const submenu = link.querySelector('ul');
-    if (submenu) {
-        submenu.insertAdjacentHTML('beforebegin',svg);
-    }
-    const arrow = link.querySelector('svg');
-    if (arrow) {
-        arrow.addEventListener('click', () => {
-            arrow.closest('li').classList.toggle('_active');
-        })
-        link.addEventListener('mouseleave', () => {
-            arrow.closest('li').classList.remove('_active');
-        })
+        const submenu = link.querySelector('ul');
+        if (submenu) {
+            submenu.insertAdjacentHTML('beforebegin', svg);
+        }
+        const arrow = link.querySelector('svg');
+        if (arrow) {
+            arrow.addEventListener('click', () => {
+                arrow.closest('li').classList.toggle('_active');
+            })
+            link.addEventListener('mouseleave', () => {
+                arrow.closest('li').classList.remove('_active');
+            })
+        }
     }
 }
 
+addSvgToMenuItem(headerLinks);
+addSvgToMenuItem(menuMenuLinks);

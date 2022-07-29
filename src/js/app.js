@@ -108,12 +108,20 @@ document.addEventListener('DOMContentLoaded', function (e) {
     const about = document.querySelector('.about');
     if (about) {
         const input = about.querySelector('.popup-hidden-input');
-        input.value=document.querySelector('.banner h1').textContent;
+        input.value = document.querySelector('.banner h1').textContent;
     }
 
 })
 
-
+window.addEventListener('scroll', () => {
+    const totop = document.querySelector('.to-top');
+    if (window.scrollY >= 1000) {
+        totop.classList.add('_active');
+    }
+    else {
+        totop.classList.remove('_active');
+    }
+})
 
 import "./menu.js";
 import "./sliders.js";
