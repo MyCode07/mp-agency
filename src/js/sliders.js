@@ -45,7 +45,7 @@ function mainSlider(slider, wrapper, slides, paginationEl, screenWidth, grid = f
 }
 mainSlider(".customers__flex-swiper", ".customers__flex", ".customers__flex-item", '.customers__flex-pagination', 768);
 mainSlider(".owrblog__row-swiper", ".owrblog__row", ".owrblog__item", '.owrblog__row-pagination', 992);
-mainSlider(".advantages__swiper", ".advantages__flex", ".advantages__flex li", '.advantages__pagination', 768);
+mainSlider(".advantages__swiper", ".advantages__flex", ".advantages__flex-li", '.advantages__pagination', 768);
 mainSlider(".products-swiper", ".products-grid", ".product", '.products-pagination', 768);
 mainSlider(".service-single__pricing-swiper", ".service-single__pricing-grid", ".service-single__product", '.service-single__pricing-pagination', 768, true);
 mainSlider(".consult__steps-swiper", ".consult__steps-grid", ".grid-steps__item", '.consult__steps-pagination', 768, true);

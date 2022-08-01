@@ -65,16 +65,18 @@
         & > :first-child {
             @include adaptive-value("margin-right", 81, 0, 1);
         }
+
+        &-title {
+            font-style: normal;
+            font-weight: 700;
+            @include adaptive-value("font-size", 20, 18, 1);
+            line-height: 1.2em;
+            @include adaptive-value("margin-bottom", 25, 15, 1);
+            letter-spacing: 0.04em;
+            color: #ffffff;
+        }
+
         ul {
-            h4 {
-                font-style: normal;
-                font-weight: 700;
-                @include adaptive-value("font-size", 20, 18, 1);
-                line-height: 1.2em;
-                @include adaptive-value("margin-bottom", 25, 15, 1);
-                letter-spacing: 0.04em;
-                color: #ffffff;
-            }
             li {
                 max-width: 250px;
                 a {

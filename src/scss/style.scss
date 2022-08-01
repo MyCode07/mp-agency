@@ -362,7 +362,7 @@ $sfd: "SF Pro Display", sans-serif;
             margin-left: -20px;
             margin-right: -20px;
         }
-        .advantages__flex li {
+        .advantages__flex-li {
             width: calc(100% - 40px);
         }
     }
@@ -374,6 +374,7 @@ $sfd: "SF Pro Display", sans-serif;
             margin: 0;
         }
 
+        &-li,
         li {
             display: flex;
             @media (max-width: 768px) {
@@ -655,6 +656,40 @@ $sfd: "SF Pro Display", sans-serif;
     // .videoblog__body
 
     &__body {
+    }
+
+    // .videoblog__icon
+
+    &__icon {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 10;
+        @include adaptive-value("width", 100, 50, 1);
+        cursor: pointer;
+        pointer-events: none;
+
+        @media (any-hover: hover) {
+            &:hover {
+                .videoblog__icon-red {
+                    fill: rgb(252, 32, 32);
+                }
+                .videoblog__icon-white {
+                    fill: rgb(207, 207, 207);
+                }
+            }
+        }
+
+        &-red {
+            fill: red;
+            transition: all 0.3s ease 0s;
+        }
+
+        &-white {
+            fill: #fff;
+            transition: all 0.3s ease 0s;
+        }
     }
 
     // .videoblog__top
@@ -1286,7 +1321,7 @@ $sfd: "SF Pro Display", sans-serif;
         align-items: center;
         justify-content: center;
         font-size: 0;
-        background-image: url('../img/svg/email_arrow.svg');
+        background-image: url("../img/svg/email_arrow.svg");
         cursor: pointer;
         background-repeat: no-repeat;
         background-position: center;
@@ -1310,11 +1345,10 @@ $sfd: "SF Pro Display", sans-serif;
             margin-left: auto !important;
             margin-right: auto !important;
         }
-
     }
 
-    @media (max-width:768px){
-        .mailpoet_text{
+    @media (max-width: 768px) {
+        .mailpoet_text {
             background-color: #ffffff !important;
             border-radius: 10px !important;
             padding: 16px 20px 16px 20px !important;
@@ -1608,7 +1642,7 @@ $sfd: "SF Pro Display", sans-serif;
             max-width: none;
         }
 
-        &._nomaxwidth{
+        &._nomaxwidth {
             max-width: none !important;
         }
     }
@@ -1768,15 +1802,69 @@ $sfd: "SF Pro Display", sans-serif;
     height: 0;
 }
 
-.heading-404{
+.heading-404 {
     font-weight: 900;
-    @include adaptive-value('font-size', 90, 36, 1);
+    @include adaptive-value("font-size", 90, 36, 1);
     text-align: center;
     line-height: 1.2em;
     color: #333333;
-    @include adaptive-value('padding-top',90, 45, 1);
+    @include adaptive-value("padding-top", 90, 45, 1);
 
-    span{
+    span {
         font-size: 0.5em;
+    }
+}
+
+.wpcf7-form-control-wrap{
+    display: block;
+}
+
+.wpcf7-not-valid-tip {
+    color: #dc3232;
+    font-size: 1em;
+    font-weight: normal;
+    display: block;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    text-align: center;
+    border: 0;
+    bottom: -1.2em;
+    max-width: 524px;
+    left: 50%;
+    transform: translate(-50%, 0);
+
+    @media (max-width: 560px) {
+        max-width: none;
+    }
+}
+
+.wpcf7-response-output {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    text-align: center;
+    border: none !important;
+    transform: translate(-50%, -50%);
+    background: linear-gradient(110.99deg, #005cb3 12.66%, #c12ac7 81.62%) !important;
+    margin: 0 !important;
+    padding: 2em !important;
+    color: #fff !important;
+    @include adaptive-value("font-size", 24, 18, 1);
+    line-height: 1.25em !important;
+    @include adaptive-value("border-radius", 30, 15, 1);
+    transition: all 0.5s ease 0s;
+    width: calc(100% - 40px);
+    max-width: 600px;
+    z-index: 102;
+
+    @media (max-width: 640px) {
+        max-width: none;
+    }
+
+    &._close {
+        opacity: 0;
+        z-index: -100;
     }
 }
