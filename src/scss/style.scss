@@ -765,7 +765,7 @@ $sfd: "SF Pro Display", sans-serif;
         &-slide {
             display: block;
             width: 100%;
-            @include adaptive-value("min-height", 608, 192, 1);
+            @include adaptive-value("height", 608, 192, 1);
 
             img {
                 height: 100%;
@@ -1815,7 +1815,7 @@ $sfd: "SF Pro Display", sans-serif;
     }
 }
 
-.wpcf7-form-control-wrap{
+.wpcf7-form-control-wrap {
     display: block;
 }
 
