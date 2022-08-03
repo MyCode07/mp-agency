@@ -424,6 +424,11 @@
                 line-height: 1.33em;
                 margin-bottom: 10px;
                 color: #0165c4;
+                a{
+                    color: inherit !important;
+                    font: inherit !important;
+                    line-height: inherit !important;
+                }
             }
 
             p {
