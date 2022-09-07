@@ -1562,9 +1562,11 @@ $sfd: "SF Pro Display", sans-serif;
 
     &__info {
         &-slider {
-            @include adaptive-value("flex-basis", 361, 200, 1);
-            flex-shrink: 0;
-            flex-grow: 0;
+            @media (min-width: 993px) {
+                @include adaptive-value("flex-basis", 361, 200, 1);
+                flex-shrink: 0;
+                flex-grow: 0;
+            }
             margin: 0;
             background: linear-gradient(217.3deg, #0165c4 5.7%, #f738fe 93.46%);
             box-shadow: 0px 4px 40px rgba(247, 56, 254, 0.2);
@@ -1572,7 +1574,6 @@ $sfd: "SF Pro Display", sans-serif;
             height: max-content;
 
             @media (max-width: 992px) {
-                flex: unset;
                 margin-bottom: 32px;
             }
         }

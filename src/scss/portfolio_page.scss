@@ -25,9 +25,6 @@
         @media (max-width: 768px) {
             display: grid;
             grid-template-columns: repeat(2, calc(178px + 125 * ((100vw - 375px) / 1065)));
-            & > :nth-child(3n) {
-                grid-column: span 2;
-            }
         }
 
         @media (max-width: 375px) {
@@ -44,8 +41,12 @@
             overflow: hidden;
             position: relative;
             img {
+                position: absolute;
+                left: 0;
+                top: 0;
                 width: 100%;
                 height: 100%;
+                object-fit: cover;
             }
             flex-grow: 0;
             flex-shrink: 0;
