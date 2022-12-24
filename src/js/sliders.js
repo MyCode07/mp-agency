@@ -1,5 +1,5 @@
 function mainSlider(slider, wrapper, slides, paginationEl, screenWidth, grid = false) {
-    if (document.querySelector(slides) && window.innerWidth <= screenWidth) {
+    if (document.querySelectorAll(slides).length && window.innerWidth <= screenWidth) {
         let sliderSwiper = document.querySelector(slider);
         sliderSwiper.classList.add('swiper');
         sliderSwiper.querySelector(wrapper).classList.add('swiper-wrapper');
@@ -39,7 +39,8 @@ function mainSlider(slider, wrapper, slides, paginationEl, screenWidth, grid = f
 }
 
 mainSlider(".customers__flex-swiper", ".customers__flex", ".customers__flex-item", '.customers__flex-pagination', 768);
-mainSlider(".owrblog__row-swiper", ".owrblog__row", ".owrblog__item", '.owrblog__row-pagination', 992);
+mainSlider(".blog .owrblog__row-swiper", ".blog .owrblog__row", ".blog .owrblog__item", '.blog .owrblog__row-pagination', 992);
+mainSlider(".cases .owrblog__row-swiper", ".cases .owrblog__row", ".cases .owrblog__item", '.cases .owrblog__row-pagination', 992);
 mainSlider(".advantages__swiper", ".advantages__flex", ".advantages__flex-li", '.advantages__pagination', 768);
 mainSlider(".products-swiper", ".products-grid", ".products-grid .product", '.products-pagination', 768);
 mainSlider(".service-single__pricing-swiper", ".service-single__pricing-grid", ".service-single__product", '.service-single__pricing-pagination', 768, true);
@@ -47,8 +48,9 @@ mainSlider(".consult__steps-swiper", ".consult__steps-grid", ".grid-steps__item"
 mainSlider(".services__results-swiper", ".services__results-wrapper", ".services__results-content", '.services__results-pagination', 660);
 
 
-let videoSlider = document.querySelector('.videoblog__slider-wrapper');
-if (videoSlider) {
+
+let videoSlider = document.querySelectorAll('.videoblog__slider-wrapper');
+if (videoSlider.length) {
     new Swiper('.videoblog__slider-wrapper', {
         loop: true,
         navigation: {
@@ -67,8 +69,11 @@ if (videoSlider) {
     })
 }
 
-let worksSlider = document.querySelector('.works__slider-slide');
-if (worksSlider) {
+
+
+
+let worksSlider = document.querySelectorAll('.works .works__slider-slide');
+if (worksSlider.length) {
     new Swiper('.works__slider', {
         loop: true,
         navigation: {
@@ -81,9 +86,6 @@ if (worksSlider) {
             el: '.works__slider-pagination',
             clickable: true
         },
-        // autoplay: {
-        //     delay: 1000,
-        // },
         breakpoints: {
             400: {
                 spaceBetween: 30
@@ -92,8 +94,8 @@ if (worksSlider) {
     })
 }
 
-let feedbackSlider = document.querySelector('.feedback__slider-slide');
-if (feedbackSlider) {
+let feedbackSlider = document.querySelectorAll('.feedback .feedback__slider-slide');
+if (feedbackSlider.length) {
     let feedbackSwiper = new Swiper('.feedback__slider-swiper', {
         loop: true,
         navigation: {
@@ -108,22 +110,22 @@ if (feedbackSlider) {
         },
     })
 
-    let feedbackInfoSwiper = new Swiper('.feedback__info-slider', {
-        loop: true,
-        spaceBetween: 0,
-        slidesPerView: 'auto',
-        simulateTouch: false,
-        allowTouchMove: false
-    })
+    // let feedbackInfoSwiper = new Swiper('.feedback__info-slider', {
+    //     loop: true,
+    //     spaceBetween: 0,
+    //     slidesPerView: 'auto',
+    //     simulateTouch: false,
+    //     allowTouchMove: false
+    // })
 
     // feedbackInfoSwiper.controller.control = feedbackSwiper;
-    feedbackSwiper.controller.control = feedbackInfoSwiper;
+    // feedbackSwiper.controller.control = feedbackInfoSwiper;
 }
 
 //
 
-let sliderProjectPastSlider = document.querySelector('.your__product-slider-slide');
-if (sliderProjectPastSlider) {
+let sliderProjectPastSlider = document.querySelectorAll('.your__product-slider-slide');
+if (sliderProjectPastSlider.length) {
     let sliderProjectPast = new Swiper('.slider__project-swiper-past', {
         loop: true,
         navigation: false,
@@ -153,4 +155,19 @@ if (sliderProjectPastSlider) {
 
     sliderProjectPast.controller.control = sliderProjectPresent;
     sliderProjectPresent.controller.control = sliderProjectPast;
+}
+
+let homeCasesSlides = document.querySelectorAll('.home__slider-cases .swiper-slide');
+if (homeCasesSlides.length) {
+    new Swiper('.home__slider-cases .swiper', {
+        loop: true,
+        slidesPerView: 'auto',
+        pagination: {
+            el: '.home__slider-cases-pagination',
+            clickable: true
+        },
+        // autoplay: {
+        //     delay: 1000,
+        // },
+    })
 }

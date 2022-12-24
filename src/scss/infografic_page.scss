@@ -25,11 +25,6 @@
         @include adaptive-value("padding-top", 38, 25, 1);
         @include adaptive-value("padding-bottom", 26, 30, 1);
 
-        @include adaptive-value("padding-left", 30, 20, 1);
-        @include adaptive-value("padding-right", 30, 20, 1);
-        @include adaptive-value("margin-left", -30, -20, 1);
-        @include adaptive-value("margin-right", -30, -20, 1);
-
         // .works__slider-wrapper
 
         &-wrapper {

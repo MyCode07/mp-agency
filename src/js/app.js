@@ -108,7 +108,7 @@ document.addEventListener('DOMContentLoaded', function (e) {
     const about = document.querySelector('.about');
     if (about) {
         const input = about.querySelector('.popup-hidden-input');
-        input.value = document.querySelector('.banner h1').textContent;
+        input.value = document.querySelector('h1').textContent;
     }
 
 })

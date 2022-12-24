@@ -199,7 +199,7 @@
     position: fixed;
     @include adaptive-value("width", 80, 40, 1);
     @include adaptive-value("height", 80, 40, 1);
-    @include adaptive-value("right", 40, 15, 1);
+    @include adaptive-value("left", 40, 15, 1);
     @include adaptive-value("bottom", 40, 15, 1);
     z-index: 99;
     visibility: hidden;

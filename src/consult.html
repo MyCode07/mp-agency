@@ -1,12 +1,87 @@
 @@include('html/head.html',{'title':'Консультация'})
 @@include('html/header.html')
 <main class="page">
-    @@include('html/banner.html',{
-    'title':'Консультация по маркетплейсам',
-    'pagetitle':'Консультация по маркетплейсам',
-    'pagebannerid':'banner-consultation',
-    'pagedescription':'Мы вместе посмотрим на ваш бизнес со стороны, найдем способы, которые уже работают, и придумаем, как масштабировать их.'
-    })
+
+    <section class="home home-section" id='banner-consultation'>
+        <div class="container">
+            <div class="home__body">
+                <div class="home__flex">
+                    <div class="home__content">
+                        <h1 class="home__title">Консультация по маркетплейсам</h1>
+                        <p class="home__subtitle">Мы вместе посмотрим на ваш бизнес со стороны, найдем способы, которые
+                            уже
+                            работают, и придумаем, как масштабировать их</p>
+                        <button class="home__button _btn-white  _open-popup-form">Бесплатная
+                            консультация</button>
+                    </div>
+                    <div class="home__slider-cases">
+                        <div class="feedback__slider-swiper swiper">
+                            <div class="feedback__slider-wrapper swiper-wrapper">
+                                <div class="feedback__slider-slide swiper-slide">
+                                    <div class="feedback__slider-slide-body">
+                                        <div class="feedback__slider-slide-top">
+                                            <div class="feedback__slider-slide-image">
+                                                <img src="img/consulting-page/feedback.png" alt="">
+                                            </div>
+                                            <div class="feedback__slider-slide-info">
+                                                <h6>Ольга Лебедева</h6>
+                                                <span>Руководитель отдела интернет-продвижения компании «Первый
+                                                    БИТ»</span>
+                                            </div>
+                                        </div>
+                                        <p class="feedback__slider-slide-text">К выбору партнера мы подходили
+                                            очень серьезно. Для нас важно, чтобы наши проекты вели
+                                            профессионалы, достигающие
+                                            качественных результатов. Так, компанию MP Agency мы выбрали, в
+                                            первую очередь, за положительную оценку со стороны их
+                                            клиентов, а также за высокие места в рейтингах и за крайне серьезное
+                                            отношение к делу.</p>
+                                    </div>
+                                </div>
+                                <div class="feedback__slider-slide swiper-slide">
+                                    <div class="feedback__slider-slide-body">
+                                        <div class="feedback__slider-slide-top">
+                                            <div class="feedback__slider-slide-image">
+                                                <img src="img/consulting-page/feedback.png" alt="">
+                                            </div>
+                                            <div class="feedback__slider-slide-info">
+                                                <h6>Ольга Лебедева</h6>
+                                                <span>Руководитель отдела интернет-продвижения компании «Первый
+                                                    БИТ»</span>
+                                            </div>
+                                        </div>
+                                        <p class="feedback__slider-slide-text">К выбору партнера мы подходили
+                                            очень серьезно. Для нас важно, чтобы наши проекты вели
+                                            профессионалы, достигающие
+                                            качественных результатов. Так, компанию MP Agency мы выбрали, в
+                                            первую очередь, за положительную оценку со стороны их
+                                            клиентов, а также за высокие места в рейтингах и за крайне серьезное
+                                            отношение к делу.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="home__slider-cases-pagination _slider-pagination"></div>
+                        </div>
+                    </div>
+                </div>
+                <a class="_scrolldown" href="#advantages">
+                    <svg width="44" height="44" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M19 12H5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            stroke="url(#gradient)" />
+                        <path d="M12 19L5 12L12 5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            stroke="url(#gradient)" />
+                        <defs xmlns="http://www.w3.org/2000/svg">
+                            <linearGradient id="gradient" x1="0" y1="0" x2="12" y2="12" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#0165C4" />
+                                <stop offset="1" stop-color="#F738FE" />
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
     <section class="about">
         <div class="container">
             <div class="about__body">
@@ -131,7 +206,7 @@
             <div class="consult__pricing-body">
                 <h2 class="consult__pricing-title _section-title">Стоимость услуги</h2>
                 <div class="consult__pricing-wrapper">
-                    <div class="consult__pricing-leftimage"></div>
+                    <img class="consult__pricing-image" src="img/about-page/banner_about.png" alt="">
                     <article class="consult__pricing-item product">
                         <div class="product__body">
                             <h4 class="product__title">Консультация</h4>
@@ -150,7 +225,7 @@
                         </div>
                         <button class="product__btn product__btn _open-popup-form">Заказать консультацию</button>
                     </article>
-                    <div class="consult__pricing-rightimage"></div>
+                     
                 </div>
             </div>
         </div>

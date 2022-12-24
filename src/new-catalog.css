@@ -1,0 +1,82 @@
+.header-navigation #menu-item-1292.kadence-menu-mega-enabled>.sub-menu {
+    width: 1115px !important;
+    margin-left: 0;
+    -webkit-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    transform: translate(0, 0);
+    left: 0;
+}
+
+.header-navigation .menu-item img._before,
+.header-navigation .rtl .menu-item img._after {
+    max-height: 60px;
+    width: 60px !important;
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 60px;
+    flex: 0 0 60px;
+}
+
+.header-navigation .sub-menu li.menu-item>a {
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+}
+
+.header-navigation ul ul ul.sub-menu,
+.header-navigation ul ul ul.submenu {
+    min-height: 0;
+    height: auto !important;
+}
+
+.header-navigation #secondary-menu .sub-menu {
+    margin-left: auto !important;
+}
+
+.header-navigation .sub-menu .nav-drop-title-wrap>span {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 150px;
+    flex: 0 0 150px;
+}
+
+.header-navigation .sub-menu .nav-drop-title-wrap {
+    padding-right: 0;
+}
+
+.header-navigation .sub-menu .sub-menu {
+    padding: 0 0 0 88px !important;
+}
+
+.header-navigation .menu-item img._before,
+.rtl .menu-item img._after {
+    margin-right: 20px !important;
+}
+
+.header-navigation .sub-menu .sub-menu li a {
+    padding: 7px !important;
+    color: var(--global-palette6) !important;
+    font-weight: 500 !important;
+}
+
+@media (max-width: 1163px) {
+    .header-navigation #menu-item-1292.kadence-menu-mega-enabled>.sub-menu {
+        width: calc(100vw - 2 * var(--global-content-edge-padding)) !important;
+        margin-left: 0 !important;
+        -webkit-transform: translate(0, 0);
+        -ms-transform: translate(0, 0);
+        transform: translate(0, 0);
+        left: 0;
+    }
+
+    .header-navigation .menu-item img._before,
+    .header-navigation .rtl .menu-item img._after {
+        max-height: 50px;
+        width: 50px !important;
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 50px;
+        flex: 0 0 50px;
+    }
+
+    .header-navigation .sub-menu .sub-menu {
+        padding: 0 0 0 78px !important;
+    }
+}

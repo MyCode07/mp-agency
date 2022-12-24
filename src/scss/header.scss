@@ -57,7 +57,7 @@
             &._active {
                 .header__submenu,
                 .sub-menu {
-                    max-height: 400px;
+                    max-height: 600px;
                 }
                 svg {
                     transform: translate(0, -50%) rotate(180deg);
@@ -72,7 +72,7 @@
                 &:hover {
                     .header__submenu,
                     .sub-menu {
-                        max-height: 400px;
+                        max-height: 600px;
                     }
                     svg {
                         transform: translate(0, -50%) rotate(180deg);
@@ -429,10 +429,7 @@
         overflow: hidden;
         z-index: 10;
         flex: 1 1 100%;
-        position: absolute;
-        background-color: #fff;
         width: 100%;
-        top: 40px;
 
         // .header__submenu-body
 
